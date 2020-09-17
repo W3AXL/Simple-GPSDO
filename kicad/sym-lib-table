@@ -1,3 +1,4 @@
 (sym_lib_table
   (lib (name 74HC)(type Legacy)(uri ${KIPRJMOD}/74HC.lib)(options "")(descr ""))
+  (lib (name simple-gpsdo-rescue)(type Legacy)(uri ${KIPRJMOD}/simple-gpsdo-rescue.lib)(options "")(descr ""))
 )
