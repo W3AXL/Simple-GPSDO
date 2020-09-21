@@ -1,4 +1,4 @@
-18663618460424823
+18666819855625056
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -305,8 +305,8 @@ CO-08
 
 
 0
-3
-3
+5
+5
 Button_Switch_Keyboard
 SW_Cherry_MX_1.00u_PCB
 Cherry MX keyswitch, 1.00u, PCB mount, http://cherryamericas.com/wp-content/uploads/2014/12/mx_cat.pdf
@@ -55054,6 +55054,13 @@ solder jumper open
 0
 5
 3
+Kycon
+KUSBX-SL-CS1N14-B
+
+
+0
+18
+15
 LED_SMD
 LED-APA102-2020
 http://www.led-color.com/upload/201604/APA102-2020%20SMD%20LED.pdf
@@ -82165,6 +82172,13 @@ UJ2-MBH-1-SMT-TR
 0
 9
 6
+molex
+734152980
+
+
+0
+6
+3
 nrg-control-box
 10118192-0001LF
 

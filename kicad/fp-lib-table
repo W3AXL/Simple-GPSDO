@@ -3,4 +3,6 @@
   (lib (name McCoy)(type KiCad)(uri ${KIPRJMOD}/McCoy.pretty)(options "")(descr ""))
   (lib (name raltron)(type KiCad)(uri ${KIPRJMOD}/raltron.pretty)(options "")(descr ""))
   (lib (name Bliley)(type KiCad)(uri ${KIPRJMOD}/Bliley.pretty)(options "")(descr ""))
+  (lib (name molex)(type KiCad)(uri ${KIPRJMOD}/molex.pretty)(options "")(descr ""))
+  (lib (name Kycon)(type KiCad)(uri ${KIPRJMOD}/Kycon.pretty)(options "")(descr ""))
 )
