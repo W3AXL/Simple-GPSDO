@@ -1169,8 +1169,6 @@ F 3 "~" H 4900 2900 50  0001 C CNN
 	-1   0    0    1   
 $EndComp
 Wire Wire Line
-	4100 3200 4600 3200
-Wire Wire Line
 	4800 3200 4900 3200
 Wire Wire Line
 	4900 3000 4900 3200
@@ -1350,8 +1348,6 @@ Text GLabel 4100 3000 2    50   Input ~ 0
 TIME_LOCK
 Wire Wire Line
 	4900 2700 4900 2800
-Wire Wire Line
-	4100 2700 4900 2700
 Text Label 4200 3200 0    50   ~ 0
 PWM_D3
 Text Label 4200 2700 0    50   ~ 0
@@ -1434,17 +1430,6 @@ Text Label 6050 5800 0    50   ~ 0
 1MHz
 Text GLabel 4300 4600 2    50   Input ~ 0
 ADC3
-$Comp
-L simple-gpsdo-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U2
-U 1 1 5F60CD50
-P 3500 3500
-F 0 "U2" H 3600 1700 50  0000 L CNN
-F 1 "ATmega32U4-AU" H 3600 1600 50  0000 L CNN
-F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 3500 3500 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 3500 3500 50  0001 C CNN
-	1    3500 3500
-	1    0    0    -1  
-$EndComp
 Text GLabel 4300 4800 2    50   Input ~ 0
 ADC1
 Text Label 4650 4650 1    50   ~ 0
@@ -2191,4 +2176,19 @@ Wire Wire Line
 Connection ~ 2400 4500
 Wire Wire Line
 	2650 4300 2650 4250
+Wire Wire Line
+	4100 2700 4900 2700
+Wire Wire Line
+	4100 3200 4600 3200
+$Comp
+L simple-gpsdo-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U2
+U 1 1 5F60CD50
+P 3500 3500
+F 0 "U2" H 3600 1700 50  0000 L CNN
+F 1 "ATmega32U4-AU" H 3600 1600 50  0000 L CNN
+F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 3500 3500 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 3500 3500 50  0001 C CNN
+	1    3500 3500
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
