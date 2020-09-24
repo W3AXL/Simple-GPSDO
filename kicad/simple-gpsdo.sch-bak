@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Simple GPSDO"
-Date "2020-09-20"
-Rev "B"
+Date "2020-09-23"
+Rev "C"
 Comp "W3AXL"
 Comment1 ""
 Comment2 ""
