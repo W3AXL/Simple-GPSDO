@@ -1940,7 +1940,7 @@ L Connector:USB_C_Receptacle_USB2.0 J9
 U 1 1 5F73B888
 P 1300 3100
 F 0 "J9" H 1407 3967 50  0000 C CNN
-F 1 "USB_C_Receptacle_USB2.0" H 1407 3876 50  0000 C CNN
+F 1 "USB_C" H 1407 3876 50  0000 C CNN
 F 2 "Kycon:KUSBX-SL-CS1N14-B" H 1450 3100 50  0001 C CNN
 F 3 "https://www.usb.org/sites/default/files/documents/usb_type-c.zip" H 1450 3100 50  0001 C CNN
 	1    1300 3100
@@ -2392,4 +2392,6 @@ Wire Wire Line
 	3600 6500 3900 6500
 Connection ~ 3600 6500
 Connection ~ 3900 6500
+Text Notes 1950 7300 0    50   ~ 0
+12V -> 6V Buck Regulator\nKeeps Pdiss on the Linears Low
 $EndSCHEMATC
