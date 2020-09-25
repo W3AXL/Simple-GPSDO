@@ -994,11 +994,6 @@ Wire Wire Line
 	5300 2700 5300 2850
 Text Notes 5000 2600 0    50   ~ 0
 Psuedo-16bit DAC
-Wire Wire Line
-	9300 5200 9600 5200
-Connection ~ 9300 5200
-Wire Wire Line
-	9300 5250 9300 5200
 $Comp
 L power:+5VD #PWR054
 U 1 1 5F78D6CA
@@ -1013,12 +1008,12 @@ $EndComp
 $Comp
 L power:GND #PWR055
 U 1 1 5F7B60F6
-P 9300 5450
-F 0 "#PWR055" H 9300 5200 50  0001 C CNN
-F 1 "GND" H 9305 5277 50  0001 C CNN
-F 2 "" H 9300 5450 50  0001 C CNN
-F 3 "" H 9300 5450 50  0001 C CNN
-	1    9300 5450
+P 9000 5500
+F 0 "#PWR055" H 9000 5250 50  0001 C CNN
+F 1 "GND" H 9005 5327 50  0001 C CNN
+F 2 "" H 9000 5500 50  0001 C CNN
+F 3 "" H 9000 5500 50  0001 C CNN
+	1    9000 5500
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
@@ -1087,86 +1082,12 @@ Text Label 4200 2700 0    50   ~ 0
 PWM_D3
 Text Label 4200 2200 0    50   ~ 0
 PWM_D11
-$Comp
-L Sensor_Temperature:LM35-D U8
-U 1 1 5FC5ED28
-P 5100 3850
-F 0 "U8" H 4770 3896 50  0000 R CNN
-F 1 "LM35-D" H 4770 3805 50  0000 R CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5100 3450 50  0001 C CNN
-F 3 "http://www.ti.com/lit/ds/symlink/lm35.pdf" H 5100 3850 50  0001 C CNN
-	1    5100 3850
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR030
-U 1 1 5FC7A3C8
-P 5100 4150
-F 0 "#PWR030" H 5100 3900 50  0001 C CNN
-F 1 "GND" H 5105 3977 50  0001 C CNN
-F 2 "" H 5100 4150 50  0001 C CNN
-F 3 "" H 5100 4150 50  0001 C CNN
-	1    5100 4150
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:+5VA #PWR028
-U 1 1 5FC7A9C6
-P 5100 3450
-F 0 "#PWR028" H 5100 3300 50  0001 C CNN
-F 1 "+5VA" H 5115 3623 50  0000 C CNN
-F 2 "" H 5100 3450 50  0001 C CNN
-F 3 "" H 5100 3450 50  0001 C CNN
-	1    5100 3450
-	1    0    0    -1  
-$EndComp
-$Comp
-L Device:C_Small C22
-U 1 1 5FC9842D
-P 5500 3500
-F 0 "C22" V 5271 3500 50  0000 C CNN
-F 1 "0.1uF" V 5362 3500 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5500 3500 50  0001 C CNN
-F 3 "~" H 5500 3500 50  0001 C CNN
-	1    5500 3500
-	0    1    1    0   
-$EndComp
-$Comp
-L power:GND #PWR038
-U 1 1 5FC993EA
-P 5650 3550
-F 0 "#PWR038" H 5650 3300 50  0001 C CNN
-F 1 "GND" H 5655 3377 50  0001 C CNN
-F 2 "" H 5650 3550 50  0001 C CNN
-F 3 "" H 5650 3550 50  0001 C CNN
-	1    5650 3550
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	5600 3500 5650 3500
-Wire Wire Line
-	5650 3500 5650 3550
-Wire Wire Line
-	5100 3450 5100 3500
-Wire Wire Line
-	5400 3500 5100 3500
-Connection ~ 5100 3500
-Wire Wire Line
-	5100 3500 5100 3550
-Wire Wire Line
-	4700 3850 4650 3850
-Wire Wire Line
-	4650 3850 4650 4200
-Text Notes 4850 4400 0    40   ~ 0
-Temperature probe next to\nOCXO for compensation
 NoConn ~ 4100 2000
 NoConn ~ 4100 3400
 Text GLabel 4300 4100 2    50   Input ~ 0
 ADC3
 Text GLabel 4300 4300 2    50   Input ~ 0
 ADC1
-Text Label 4650 4150 1    50   ~ 0
-ADC2
 $Comp
 L Bliley:NV47X Y2
 U 1 1 5FD80985
@@ -1179,8 +1100,6 @@ F 3 "" H 7250 4000 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 NoConn ~ 6900 4100
-Wire Wire Line
-	4100 4200 4650 4200
 Wire Wire Line
 	4100 4300 4250 4300
 Wire Wire Line
@@ -1395,8 +1314,6 @@ $EndComp
 Wire Wire Line
 	8600 5200 8600 5100
 Wire Wire Line
-	8600 5200 9300 5200
-Wire Wire Line
 	6900 4000 6500 4000
 Wire Wire Line
 	6300 3850 6300 3900
@@ -1469,12 +1386,12 @@ Wire Wire Line
 $Comp
 L Device:C_Small C24
 U 1 1 5F7B60EC
-P 9300 5350
-F 0 "C24" H 9209 5304 50  0000 R CNN
-F 1 "0.1uF" H 9209 5395 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9300 5350 50  0001 C CNN
-F 3 "~" H 9300 5350 50  0001 C CNN
-	1    9300 5350
+P 9000 5400
+F 0 "C24" H 8909 5354 50  0000 R CNN
+F 1 "0.1uF" H 8909 5445 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 9000 5400 50  0001 C CNN
+F 3 "~" H 9000 5400 50  0001 C CNN
+	1    9000 5400
 	1    0    0    1   
 $EndComp
 $Comp
@@ -2539,4 +2456,127 @@ F 3 "" H 9500 3450 50  0001 C CNN
 $EndComp
 Text GLabel 9300 3250 0    50   Input ~ 0
 GPS_PPS
+Text Label 4750 4150 1    50   ~ 0
+ADC2
+Text Notes 5000 4400 0    40   ~ 0
+Temperature probe next to\nOCXO for compensation
+Wire Wire Line
+	5250 3500 5250 3550
+Connection ~ 5250 3500
+Wire Wire Line
+	5550 3500 5250 3500
+Wire Wire Line
+	5250 3450 5250 3500
+Wire Wire Line
+	5800 3500 5800 3550
+Wire Wire Line
+	5750 3500 5800 3500
+$Comp
+L power:GND #PWR038
+U 1 1 5FC993EA
+P 5800 3550
+F 0 "#PWR038" H 5800 3300 50  0001 C CNN
+F 1 "GND" H 5805 3377 50  0001 C CNN
+F 2 "" H 5800 3550 50  0001 C CNN
+F 3 "" H 5800 3550 50  0001 C CNN
+	1    5800 3550
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C_Small C22
+U 1 1 5FC9842D
+P 5650 3500
+F 0 "C22" V 5421 3500 50  0000 C CNN
+F 1 "0.1uF" V 5512 3500 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5650 3500 50  0001 C CNN
+F 3 "~" H 5650 3500 50  0001 C CNN
+	1    5650 3500
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+5VA #PWR028
+U 1 1 5FC7A9C6
+P 5250 3450
+F 0 "#PWR028" H 5250 3300 50  0001 C CNN
+F 1 "+5VA" H 5265 3623 50  0000 C CNN
+F 2 "" H 5250 3450 50  0001 C CNN
+F 3 "" H 5250 3450 50  0001 C CNN
+	1    5250 3450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR030
+U 1 1 5FC7A3C8
+P 5250 4150
+F 0 "#PWR030" H 5250 3900 50  0001 C CNN
+F 1 "GND" H 5255 3977 50  0001 C CNN
+F 2 "" H 5250 4150 50  0001 C CNN
+F 3 "" H 5250 4150 50  0001 C CNN
+	1    5250 4150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Sensor_Temperature:LM35-D U8
+U 1 1 5FC5ED28
+P 5250 3850
+F 0 "U8" H 4920 3896 50  0000 R CNN
+F 1 "LM35-D" H 4920 3805 50  0000 R CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 5250 3450 50  0001 C CNN
+F 3 "http://www.ti.com/lit/ds/symlink/lm35.pdf" H 5250 3850 50  0001 C CNN
+	1    5250 3850
+	-1   0    0    -1  
+$EndComp
+Wire Wire Line
+	4750 3850 4750 4200
+Wire Wire Line
+	4750 3850 4850 3850
+Wire Wire Line
+	4100 4200 4750 4200
+$Comp
+L Device:CP_Small C?
+U 1 1 5F8452F2
+P 9200 5400
+F 0 "C?" H 9288 5446 50  0000 L CNN
+F 1 "10uF" H 9288 5355 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 9200 5400 50  0001 C CNN
+F 3 "~" H 9200 5400 50  0001 C CNN
+	1    9200 5400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR?
+U 1 1 5F88788D
+P 9200 5500
+F 0 "#PWR?" H 9200 5250 50  0001 C CNN
+F 1 "GND" H 9205 5327 50  0001 C CNN
+F 2 "" H 9200 5500 50  0001 C CNN
+F 3 "" H 9200 5500 50  0001 C CNN
+	1    9200 5500
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	9000 5200 9000 5300
+Wire Wire Line
+	9200 5300 9200 5200
+Connection ~ 9200 5200
+Wire Wire Line
+	9200 5200 9600 5200
+Wire Wire Line
+	9000 5200 9200 5200
+$Comp
+L Device:R_Small R?
+U 1 1 5F8F0055
+P 8800 5200
+F 0 "R?" V 8900 5200 50  0000 C BNN
+F 1 "2" V 8800 5200 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8800 5200 50  0001 C CNN
+F 3 "~" H 8800 5200 50  0001 C CNN
+	1    8800 5200
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	8600 5200 8700 5200
+Wire Wire Line
+	8900 5200 9000 5200
+Connection ~ 9000 5200
 $EndSCHEMATC
