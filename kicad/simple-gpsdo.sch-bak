@@ -1240,7 +1240,7 @@ F 1 "4.7uF" H 1638 1205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1550 1250 50  0001 C CNN
 F 3 "~" H 1550 1250 50  0001 C CNN
 	1    1550 1250
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	1600 1500 1550 1500
@@ -1379,7 +1379,7 @@ F 3 "~" H 9000 5400 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Connector:USB_C_Receptacle_USB2.0 J9
+L simple-gpsdo-rescue:USB_C_Receptacle_USB2.0-Connector J9
 U 1 1 5F73B888
 P 1300 2600
 F 0 "J9" H 1407 3467 50  0000 C CNN
@@ -1437,7 +1437,6 @@ NoConn ~ 1900 3200
 NoConn ~ 1900 2200
 NoConn ~ 1900 2300
 NoConn ~ 2850 2150
-NoConn ~ 1250 800 
 $Comp
 L Device:Crystal_GND24 Y1
 U 1 1 5F750A50

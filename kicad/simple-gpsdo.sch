@@ -135,28 +135,6 @@ Wire Wire Line
 	2650 1150 2800 1150
 Connection ~ 2800 1150
 $Comp
-L Device:C_Small C2
-U 1 1 5F6D722A
-P 2250 3950
-F 0 "C2" H 2158 3904 50  0000 R CNN
-F 1 "6.8pF" H 2158 3995 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2250 3950 50  0001 C CNN
-F 3 "~" H 2250 3950 50  0001 C CNN
-	1    2250 3950
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:C_Small C1
-U 1 1 5F6DDEED
-P 2250 3450
-F 0 "C1" H 2159 3404 50  0000 R CNN
-F 1 "6.8pF" H 2159 3495 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2250 3450 50  0001 C CNN
-F 3 "~" H 2250 3450 50  0001 C CNN
-	1    2250 3450
-	0    -1   1    0   
-$EndComp
-$Comp
 L Device:C_Small C4
 U 1 1 5F6EFBE0
 P 2800 3000
@@ -1240,7 +1218,7 @@ F 1 "4.7uF" H 1638 1205 50  0000 L CNN
 F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1550 1250 50  0001 C CNN
 F 3 "~" H 1550 1250 50  0001 C CNN
 	1    1550 1250
-	1    0    0    -1  
+	-1   0    0    -1  
 $EndComp
 Wire Wire Line
 	1600 1500 1550 1500
@@ -1379,7 +1357,7 @@ F 3 "~" H 9000 5400 50  0001 C CNN
 	1    0    0    1   
 $EndComp
 $Comp
-L Connector:USB_C_Receptacle_USB2.0 J9
+L simple-gpsdo-rescue:USB_C_Receptacle_USB2.0-Connector J9
 U 1 1 5F73B888
 P 1300 2600
 F 0 "J9" H 1407 3467 50  0000 C CNN
@@ -1437,18 +1415,6 @@ NoConn ~ 1900 3200
 NoConn ~ 1900 2200
 NoConn ~ 1900 2300
 NoConn ~ 2850 2150
-NoConn ~ 1250 800 
-$Comp
-L Device:Crystal_GND24 Y1
-U 1 1 5F750A50
-P 2400 3700
-F 0 "Y1" V 2150 3600 50  0000 R CNN
-F 1 "16MHz" V 2250 3600 50  0000 R CNN
-F 2 "Crystal:Crystal_SMD_SeikoEpson_TSX3225-4Pin_3.2x2.5mm_HandSoldering" H 2400 3700 50  0001 C CNN
-F 3 "~" H 2400 3700 50  0001 C CNN
-	1    2400 3700
-	0    -1   1    0   
-$EndComp
 Wire Wire Line
 	1600 3950 1600 3850
 Wire Wire Line
@@ -1483,54 +1449,6 @@ F 3 " ~" H -25 4000 50  0001 C CNN
 	1    1250 4550
 	1    0    0    -1  
 $EndComp
-$Comp
-L power:GND #PWR03
-U 1 1 5F85D4E9
-P 2100 4050
-F 0 "#PWR03" H 2100 3800 50  0001 C CNN
-F 1 "GND" H 2105 3877 50  0001 C CNN
-F 2 "" H 2100 4050 50  0001 C CNN
-F 3 "" H 2100 4050 50  0001 C CNN
-	1    2100 4050
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR07
-U 1 1 5F85DF21
-P 2650 3750
-F 0 "#PWR07" H 2650 3500 50  0001 C CNN
-F 1 "GND" H 2655 3577 50  0001 C CNN
-F 2 "" H 2650 3750 50  0001 C CNN
-F 3 "" H 2650 3750 50  0001 C CNN
-	1    2650 3750
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	2600 3700 2650 3700
-Wire Wire Line
-	2500 3700 2500 3750
-Wire Wire Line
-	2350 3450 2400 3450
-Wire Wire Line
-	2400 3450 2400 3550
-Wire Wire Line
-	2150 3450 2100 3450
-Wire Wire Line
-	2100 3450 2100 3700
-Wire Wire Line
-	2150 3950 2100 3950
-Connection ~ 2100 3950
-Wire Wire Line
-	2100 3950 2100 4050
-Wire Wire Line
-	2200 3700 2100 3700
-Connection ~ 2100 3700
-Wire Wire Line
-	2100 3700 2100 3950
-Wire Wire Line
-	2350 3950 2400 3950
-Wire Wire Line
-	2400 3950 2400 3850
 Text GLabel 2700 1700 0    50   Input ~ 0
 XTAL1
 Text GLabel 2700 1900 0    50   Input ~ 0
@@ -1539,18 +1457,8 @@ Wire Wire Line
 	2900 1700 2700 1700
 Wire Wire Line
 	2700 1900 2900 1900
-Text GLabel 2400 3350 1    50   Input ~ 0
-XTAL1
 Wire Wire Line
-	2400 3350 2400 3450
-Connection ~ 2400 3450
-Text GLabel 2400 4050 3    50   Input ~ 0
-XTAL2
-Wire Wire Line
-	2400 3950 2400 4050
-Connection ~ 2400 3950
-Wire Wire Line
-	2650 3750 2650 3700
+	2850 4000 2850 3950
 Wire Wire Line
 	4100 2200 4900 2200
 Wire Wire Line
@@ -2617,4 +2525,95 @@ Connection ~ 4950 4200
 Text Label 4600 4200 0    50   ~ 0
 ADC2
 NoConn ~ 4100 3400
+Connection ~ 2600 4200
+Wire Wire Line
+	2600 4200 2600 4300
+Text GLabel 2600 4300 3    50   Input ~ 0
+XTAL2
+Connection ~ 2600 3700
+Wire Wire Line
+	2600 3600 2600 3700
+Text GLabel 2600 3600 1    50   Input ~ 0
+XTAL1
+Wire Wire Line
+	2600 4200 2600 4100
+Wire Wire Line
+	2550 4200 2600 4200
+Wire Wire Line
+	2300 3950 2300 4200
+Connection ~ 2300 3950
+Wire Wire Line
+	2400 3950 2300 3950
+Wire Wire Line
+	2300 4200 2300 4300
+Connection ~ 2300 4200
+Wire Wire Line
+	2350 4200 2300 4200
+Wire Wire Line
+	2300 3700 2300 3950
+Wire Wire Line
+	2350 3700 2300 3700
+Wire Wire Line
+	2600 3700 2600 3800
+Wire Wire Line
+	2550 3700 2600 3700
+Wire Wire Line
+	2700 3950 2700 4000
+Wire Wire Line
+	2800 3950 2850 3950
+$Comp
+L power:GND #PWR07
+U 1 1 5F85DF21
+P 2850 4000
+F 0 "#PWR07" H 2850 3750 50  0001 C CNN
+F 1 "GND" H 2855 3827 50  0001 C CNN
+F 2 "" H 2850 4000 50  0001 C CNN
+F 3 "" H 2850 4000 50  0001 C CNN
+	1    2850 4000
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR03
+U 1 1 5F85D4E9
+P 2300 4300
+F 0 "#PWR03" H 2300 4050 50  0001 C CNN
+F 1 "GND" H 2305 4127 50  0001 C CNN
+F 2 "" H 2300 4300 50  0001 C CNN
+F 3 "" H 2300 4300 50  0001 C CNN
+	1    2300 4300
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:Crystal_GND24 Y1
+U 1 1 5F750A50
+P 2600 3950
+F 0 "Y1" V 2350 3850 50  0000 R CNN
+F 1 "16MHz" V 2450 3850 50  0000 R CNN
+F 2 "Crystal:Crystal_SMD_SeikoEpson_TSX3225-4Pin_3.2x2.5mm_HandSoldering" H 2600 3950 50  0001 C CNN
+F 3 "~" H 2600 3950 50  0001 C CNN
+	1    2600 3950
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:C_Small C1
+U 1 1 5F6DDEED
+P 2450 3700
+F 0 "C1" H 2359 3654 50  0000 R CNN
+F 1 "6.8pF" H 2359 3745 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2450 3700 50  0001 C CNN
+F 3 "~" H 2450 3700 50  0001 C CNN
+	1    2450 3700
+	0    -1   1    0   
+$EndComp
+$Comp
+L Device:C_Small C2
+U 1 1 5F6D722A
+P 2450 4200
+F 0 "C2" H 2358 4154 50  0000 R CNN
+F 1 "6.8pF" H 2358 4245 50  0000 R CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2450 4200 50  0001 C CNN
+F 3 "~" H 2450 4200 50  0001 C CNN
+	1    2450 4200
+	0    -1   -1   0   
+$EndComp
 $EndSCHEMATC
