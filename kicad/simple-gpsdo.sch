@@ -5,7 +5,7 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Simple GPSDO"
-Date "2021-10-21"
+Date "2021-10-22"
 Rev "D"
 Comp "W3AXL"
 Comment1 ""
@@ -84,7 +84,7 @@ U 1 1 5F6CCE4B
 P 1800 1500
 F 0 "SW1" H 1900 1700 50  0000 C CNN
 F 1 "RST" H 1900 1600 50  0000 C CNN
-F 2 "Button_Switch_SMD:SW_SPST_PTS645" H 1800 1700 50  0001 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x02_P2.54mm_Vertical" H 1800 1700 50  0001 C CNN
 F 3 "~" H 1800 1700 50  0001 C CNN
 	1    1800 1500
 	1    0    0    -1  
@@ -216,52 +216,6 @@ Text GLabel 4100 3300 2    50   Input ~ 0
 GPS_LOCK
 Text GLabel 7100 1950 0    50   Input ~ 0
 10MHz
-$Comp
-L Connector:Conn_Coaxial J5
-U 1 1 5F6FAAF2
-P 9500 3500
-F 0 "J5" H 9600 3475 50  0000 L CNN
-F 1 "GPS_IN" H 9600 3384 50  0000 L CNN
-F 2 "Connector_Coaxial:SMA_Amphenol_132203-12_Horizontal" H 9500 3500 50  0001 C CNN
-F 3 " ~" H 9500 3500 50  0001 C CNN
-	1    9500 3500
-	1    0    0    -1  
-$EndComp
-$Comp
-L Connector:Conn_Coaxial J4
-U 1 1 5F6FB220
-P 9000 3500
-F 0 "J4" H 9100 3475 50  0000 L CNN
-F 1 "GPS_NEO" H 9100 3384 50  0000 L CNN
-F 2 "Connector_Coaxial:U.FL_Hirose_U.FL-R-SMT-1_Vertical" H 9000 3500 50  0001 C CNN
-F 3 " ~" H 9000 3500 50  0001 C CNN
-	1    9000 3500
-	-1   0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR035
-U 1 1 5F6FBC5B
-P 9000 3700
-F 0 "#PWR035" H 9000 3450 50  0001 C CNN
-F 1 "GND" H 9005 3527 50  0001 C CNN
-F 2 "" H 9000 3700 50  0001 C CNN
-F 3 "" H 9000 3700 50  0001 C CNN
-	1    9000 3700
-	1    0    0    -1  
-$EndComp
-$Comp
-L power:GND #PWR040
-U 1 1 5F6FC004
-P 9500 3700
-F 0 "#PWR040" H 9500 3450 50  0001 C CNN
-F 1 "GND" H 9505 3527 50  0001 C CNN
-F 2 "" H 9500 3700 50  0001 C CNN
-F 3 "" H 9500 3700 50  0001 C CNN
-	1    9500 3700
-	1    0    0    -1  
-$EndComp
-Wire Wire Line
-	9200 3500 9300 3500
 NoConn ~ 4100 2100
 NoConn ~ 4100 3600
 NoConn ~ 4100 3700
@@ -280,47 +234,25 @@ F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8610_
 	1    8000 1850
 	1    0    0    -1  
 $EndComp
-Text GLabel 5750 1500 0    50   Input ~ 0
+Text GLabel 6000 1250 0    50   Input ~ 0
 OVEN_TEMP
 Wire Wire Line
-	5500 2000 5500 2050
-Wire Wire Line
-	6000 1500 6000 1550
+	5750 1750 5750 1800
 Wire Wire Line
 	6250 1250 6250 1300
-Text GLabel 5500 1750 0    50   Input ~ 0
+Wire Wire Line
+	6500 1000 6500 1050
+Text GLabel 5750 1500 0    50   Input ~ 0
 TIME_LOCK
-Text GLabel 5250 2000 0    50   Input ~ 0
+Text GLabel 5500 1750 0    50   Input ~ 0
 GPS_LOCK
-Text GLabel 6000 1250 0    50   Input ~ 0
+Text GLabel 6250 1000 0    50   Input ~ 0
 POWER_OK
 $Comp
 L Device:R_Small R9
 U 1 1 5F7744D2
-P 5600 1750
-F 0 "R9" V 5700 1750 50  0000 C BNN
-F 1 "470" V 5600 1750 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5600 1750 50  0001 C CNN
-F 3 "~" H 5600 1750 50  0001 C CNN
-	1    5600 1750
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R_Small R14
-U 1 1 5F77417F
-P 5350 2000
-F 0 "R14" V 5450 2000 50  0000 C BNN
-F 1 "470" V 5350 2000 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5350 2000 50  0001 C CNN
-F 3 "~" H 5350 2000 50  0001 C CNN
-	1    5350 2000
-	0    1    1    0   
-$EndComp
-$Comp
-L Device:R_Small R8
-U 1 1 5F773C43
 P 5850 1500
-F 0 "R8" V 5950 1500 50  0000 C BNN
+F 0 "R9" V 5950 1500 50  0000 C BNN
 F 1 "470" V 5850 1500 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5850 1500 50  0001 C CNN
 F 3 "~" H 5850 1500 50  0001 C CNN
@@ -328,10 +260,21 @@ F 3 "~" H 5850 1500 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
-L Device:R_Small R13
-U 1 1 5F76DEE1
+L Device:R_Small R14
+U 1 1 5F77417F
+P 5600 1750
+F 0 "R14" V 5700 1750 50  0000 C BNN
+F 1 "470" V 5600 1750 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5600 1750 50  0001 C CNN
+F 3 "~" H 5600 1750 50  0001 C CNN
+	1    5600 1750
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:R_Small R8
+U 1 1 5F773C43
 P 6100 1250
-F 0 "R13" V 6200 1250 50  0000 C BNN
+F 0 "R8" V 6200 1250 50  0000 C BNN
 F 1 "470" V 6100 1250 40  0000 C CNN
 F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6100 1250 50  0001 C CNN
 F 3 "~" H 6100 1250 50  0001 C CNN
@@ -339,10 +282,32 @@ F 3 "~" H 6100 1250 50  0001 C CNN
 	0    1    1    0   
 $EndComp
 $Comp
+L Device:R_Small R13
+U 1 1 5F76DEE1
+P 6350 1000
+F 0 "R13" V 6450 1000 50  0000 C BNN
+F 1 "470" V 6350 1000 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6350 1000 50  0001 C CNN
+F 3 "~" H 6350 1000 50  0001 C CNN
+	1    6350 1000
+	0    1    1    0   
+$EndComp
+$Comp
 L power:GND #PWR032
 U 1 1 5F76DB29
+P 6500 1250
+F 0 "#PWR032" H 6500 1000 50  0001 C CNN
+F 1 "GND" H 6505 1077 50  0001 C CNN
+F 2 "" H 6500 1250 50  0001 C CNN
+F 3 "" H 6500 1250 50  0001 C CNN
+	1    6500 1250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR026
+U 1 1 5F76D7CA
 P 6250 1500
-F 0 "#PWR032" H 6250 1250 50  0001 C CNN
+F 0 "#PWR026" H 6250 1250 50  0001 C CNN
 F 1 "GND" H 6255 1327 50  0001 C CNN
 F 2 "" H 6250 1500 50  0001 C CNN
 F 3 "" H 6250 1500 50  0001 C CNN
@@ -350,36 +315,25 @@ F 3 "" H 6250 1500 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L power:GND #PWR026
-U 1 1 5F76D7CA
-P 6000 1750
-F 0 "#PWR026" H 6000 1500 50  0001 C CNN
-F 1 "GND" H 6005 1577 50  0001 C CNN
-F 2 "" H 6000 1750 50  0001 C CNN
-F 3 "" H 6000 1750 50  0001 C CNN
-	1    6000 1750
-	1    0    0    -1  
-$EndComp
-$Comp
 L power:GND #PWR033
 U 1 1 5F76D3E3
-P 5500 2250
-F 0 "#PWR033" H 5500 2000 50  0001 C CNN
-F 1 "GND" H 5505 2077 50  0001 C CNN
-F 2 "" H 5500 2250 50  0001 C CNN
-F 3 "" H 5500 2250 50  0001 C CNN
-	1    5500 2250
+P 5750 2000
+F 0 "#PWR033" H 5750 1750 50  0001 C CNN
+F 1 "GND" H 5755 1827 50  0001 C CNN
+F 2 "" H 5750 2000 50  0001 C CNN
+F 3 "" H 5750 2000 50  0001 C CNN
+	1    5750 2000
 	1    0    0    -1  
 $EndComp
 $Comp
 L power:GND #PWR027
 U 1 1 5F7672A8
-P 5750 2000
-F 0 "#PWR027" H 5750 1750 50  0001 C CNN
-F 1 "GND" H 5755 1827 50  0001 C CNN
-F 2 "" H 5750 2000 50  0001 C CNN
-F 3 "" H 5750 2000 50  0001 C CNN
-	1    5750 2000
+P 6000 1750
+F 0 "#PWR027" H 6000 1500 50  0001 C CNN
+F 1 "GND" H 6005 1577 50  0001 C CNN
+F 2 "" H 6000 1750 50  0001 C CNN
+F 3 "" H 6000 1750 50  0001 C CNN
+	1    6000 1750
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -538,8 +492,6 @@ F 3 "~" H 7200 1950 50  0001 C CNN
 $EndComp
 Text Notes 9200 1250 0    40   ~ 0
 2x Buffered 10MHz Outputs
-Text Notes 8600 3900 0    40   ~ 0
-Jumper to connect input SMA to NEO-6M u.Fl
 Text Notes 6750 4850 0    40   ~ 0
 100Ω resistors on all digital lines\nto keep the noise down
 $Comp
@@ -1451,57 +1403,57 @@ Connection ~ 1650 2950
 Wire Wire Line
 	1650 2950 1700 2950
 Wire Wire Line
+	6450 1000 6500 1000
+Wire Wire Line
 	6200 1250 6250 1250
 Wire Wire Line
 	5950 1500 6000 1500
 Wire Wire Line
+	6000 1500 6000 1550
+Wire Wire Line
 	5700 1750 5750 1750
-Wire Wire Line
-	5750 1750 5750 1800
-Wire Wire Line
-	5450 2000 5500 2000
 $Comp
 L Device:LED_Small D5
 U 1 1 61B94B77
-P 5500 2150
-F 0 "D5" V 5546 2080 50  0000 R CNN
-F 1 "GLOCK" V 5455 2080 50  0000 R CNN
-F 2 "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear" V 5500 2150 50  0001 C CNN
-F 3 "~" V 5500 2150 50  0001 C CNN
-	1    5500 2150
-	0    -1   -1   0   
-$EndComp
-$Comp
-L Device:LED_Small D3
-U 1 1 61B9F43C
 P 5750 1900
-F 0 "D3" V 5796 1830 50  0000 R CNN
-F 1 "TLOCK" V 5705 1830 50  0000 R CNN
+F 0 "D5" V 5796 1830 50  0000 R CNN
+F 1 "GLOCK" V 5705 1830 50  0000 R CNN
 F 2 "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear" V 5750 1900 50  0001 C CNN
 F 3 "~" V 5750 1900 50  0001 C CNN
 	1    5750 1900
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:LED_Small D2
-U 1 1 61BB75DF
+L Device:LED_Small D3
+U 1 1 61B9F43C
 P 6000 1650
-F 0 "D2" V 6046 1580 50  0000 R CNN
-F 1 "OVEN" V 5955 1580 50  0000 R CNN
+F 0 "D3" V 6046 1580 50  0000 R CNN
+F 1 "TLOCK" V 5955 1580 50  0000 R CNN
 F 2 "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear" V 6000 1650 50  0001 C CNN
 F 3 "~" V 6000 1650 50  0001 C CNN
 	1    6000 1650
 	0    -1   -1   0   
 $EndComp
 $Comp
-L Device:LED_Small D4
-U 1 1 61BBEAA6
+L Device:LED_Small D2
+U 1 1 61BB75DF
 P 6250 1400
-F 0 "D4" V 6296 1330 50  0000 R CNN
-F 1 "POWER" V 6205 1330 50  0000 R CNN
+F 0 "D2" V 6296 1330 50  0000 R CNN
+F 1 "OVEN" V 6205 1330 50  0000 R CNN
 F 2 "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear" V 6250 1400 50  0001 C CNN
 F 3 "~" V 6250 1400 50  0001 C CNN
 	1    6250 1400
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:LED_Small D4
+U 1 1 61BBEAA6
+P 6500 1150
+F 0 "D4" V 6546 1080 50  0000 R CNN
+F 1 "POWER" V 6455 1080 50  0000 R CNN
+F 2 "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear" V 6500 1150 50  0001 C CNN
+F 3 "~" V 6500 1150 50  0001 C CNN
+	1    6500 1150
 	0    -1   -1   0   
 $EndComp
 Wire Wire Line
@@ -1871,17 +1823,6 @@ F 3 "" H 2500 7050 50  0001 C CNN
 	1    2500 7050
 	1    0    0    -1  
 $EndComp
-$Comp
-L Device:L_Small L2
-U 1 1 5F8B9711
-P 3950 6950
-F 0 "L2" V 4000 6900 50  0000 L CNN
-F 1 "3.3uH" V 3900 6850 40  0000 L CNN
-F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-50xx_HandSoldering" H 3950 6950 50  0001 C CNN
-F 3 "~" H 3950 6950 50  0001 C CNN
-	1    3950 6950
-	0    -1   -1   0   
-$EndComp
 Wire Wire Line
 	3750 6950 3850 6950
 $Comp
@@ -2228,4 +2169,58 @@ Wire Wire Line
 	2100 2300 2000 2300
 Wire Wire Line
 	2300 2300 2900 2300
+$Comp
+L Device:L_Small L2
+U 1 1 5F8B9711
+P 3950 6950
+F 0 "L2" V 4000 6900 50  0000 L CNN
+F 1 "3.3uH" V 3900 6850 40  0000 L CNN
+F 2 "Inductor_SMD:L_Taiyo-Yuden_NR-50xx_HandSoldering" H 3950 6950 50  0001 C CNN
+F 3 "~" H 3950 6950 50  0001 C CNN
+	1    3950 6950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	5500 2000 5500 2050
+$Comp
+L Device:R_Small R17
+U 1 1 62657658
+P 5350 2000
+F 0 "R17" V 5450 2000 50  0000 C BNN
+F 1 "470" V 5350 2000 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 5350 2000 50  0001 C CNN
+F 3 "~" H 5350 2000 50  0001 C CNN
+	1    5350 2000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR028
+U 1 1 62657662
+P 5500 2250
+F 0 "#PWR028" H 5500 2000 50  0001 C CNN
+F 1 "GND" H 5505 2077 50  0001 C CNN
+F 2 "" H 5500 2250 50  0001 C CNN
+F 3 "" H 5500 2250 50  0001 C CNN
+	1    5500 2250
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5450 2000 5500 2000
+$Comp
+L Device:LED_Small D6
+U 1 1 6265766D
+P 5500 2150
+F 0 "D6" V 5546 2080 50  0000 R CNN
+F 1 "PPS" V 5455 2080 50  0000 R CNN
+F 2 "LED_THT:LED_D3.0mm_Horizontal_O1.27mm_Z2.0mm_Clear" V 5500 2150 50  0001 C CNN
+F 3 "~" V 5500 2150 50  0001 C CNN
+	1    5500 2150
+	0    -1   -1   0   
+$EndComp
+Text GLabel 5250 2000 0    50   Input ~ 0
+GPS_PPS
+Text Notes 8350 4200 0    40   ~ 0
+GPS ANT connects to module\nvia SMA-u.FL bulkhead & jumper
+Text Notes 8850 3050 0    40   ~ 0
+PPS connection is a jumper\nto bulkhead SMA
 $EndSCHEMATC
