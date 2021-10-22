@@ -1,4 +1,4 @@
-update=10/16/2020 1:01:10 PM
+update=10/21/2021 10:09:15 PM
 version=1
 last_client=kicad
 [general]
@@ -256,10 +256,10 @@ dPairViaGap=0.25
 [schematic_editor]
 version=1
 PageLayoutDescrFile=
-PlotDirectoryName=sch/revC
+PlotDirectoryName=sch/revD
 SubpartIdSeparator=0
 SubpartFirstId=65
 NetFmtName=Pcbnew
 SpiceAjustPassiveValues=0
-LabSize=40
+LabSize=50
 ERC_TestSimilarLabels=1
