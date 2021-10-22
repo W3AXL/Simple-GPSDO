@@ -5,13 +5,13 @@ Ref,Qnty,Value,Desc,Footprint,Vendor,P/N, Ea , Tot
 "C5, C13, ",2,1nF,C_Small,C_0805,Digikey,CL21B102KBANFNC, $0.10 , $0.20 
 "C6, C7, C9, C10, C15, C17, C20, C21, C22, C24, C26, C33, ",12,0.1uF,C_Small,C_0805,Digikey,08055C104KAT4A, $0.08 , $0.91 
 "C8, C27, ",2,22uF,CP_Small,CP_2312 (6032),Digikey,TAJC226K025RNJ, $0.78 , $1.56 
-"C11, C12, C14, C25, C30, ",4,4.7uF,CP_Small,CP_1206,Digikey,F931E475KAA, $0.58 , $2.32 
+"C11, C12, C14, C25, C30, ",5,4.7uF,CP_Small,CP_1206,Digikey,F931E475KAA, $0.58 , $2.90 
 "D1, ",1,1N6263,D_Schottky_Small,SOD-123,Digikey,1N6263W-7-F, $0.47 , $0.47 
-"D2, ",1,OVEN,LED_Small,LED_3mm_THT_RA,Digikey,,,
-"D3, ",1,TLOCK,LED_Small,LED_3mm_THT_RA,Digikey,,,
-"D4, ",1,POWER,LED_Small,LED_3mm_THT_RA,Digikey,,,
-"D5, ",1,GLOCK,LED_Small,LED_3mm_THT_RA,Digikey,,,
-"D6, ",1,PPS,LED_Small,LED_3mm_THT_RA,Digikey,,,
+"D2, ",1,OVEN,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/YD, $0.53 , $0.53 
+"D3, ",1,TLOCK,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
+"D4, ",1,POWER,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/ID, $0.53 , $0.53 
+"D5, ",1,GLOCK,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
+"D6, ",1,PPS,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
 "F1, ",1,3A,Polyfuse_Small,F_1206,Digikey,,,
 "FB1, FB2, FB3, ",3,Ferrite,Ferrite_Bead_Small,FB_1206,Digikey,,,
 "J1, ",1,PPS_OUT,Conn_Coaxial,01x02 Pin Header & Mating Socket,Digikey,,,
