@@ -1,12 +1,12 @@
 Ref,Qnty,Value,Desc,Footprint,Vendor,P/N, Ea , Tot 
-"C1, C2, ",2,6.8pF,C_Small,C_0805,Digikey,,,
-"C3, C32, C34, C35, ",4,10uF,CP_Small,CP_1411 (3528),Digikey,TAJB106K025RNJ, $0.70 ,
-"C4, ",1,1uF,C_Small,C_0805,Digikey,,,
-"C5, C13, ",2,1nF,C_Small,C_0805,Digikey,,,
-"C6, C7, C9, C10, C15, C17, C20, C21, C22, C23, C24, C26, C33, ",13,0.1uF,C_Small,C_0805,Digikey,,,
-"C8, C27, ",2,22uF,CP_Small,CP_2312 (6032),Digikey,,,
-"C11, C12, C25, C30, ",4,4.7uF,CP_Small,CP_1206,Digikey,F931E475KAA, $0.58 ,
-"D1, ",1,1N5711,D_Schottky_Small,SOD-123,Digikey,,,
+"C1, C2, ",2,6.8pF,C_Small,C_0805,Digikey,885012007050, $0.10 , $0.20 
+"C3, C32, C34, C35, ",4,10uF,CP_Small,CP_1411 (3528),Digikey,TAJB106K025RNJ, $0.70 , $2.80 
+"C4, ",1,1uF,C_Small,C_0805,Digikey,CL21F105ZBFNNNG, $0.14 , $0.14 
+"C5, C13, ",2,1nF,C_Small,C_0805,Digikey,CL21B102KBANFNC, $0.10 , $0.20 
+"C6, C7, C9, C10, C15, C17, C20, C21, C22, C23, C24, C26, C33, ",13,0.1uF,C_Small,C_0805,Digikey,08055C104KAT4A, $0.08 , $0.99 
+"C8, C27, ",2,22uF,CP_Small,CP_2312 (6032),Digikey,TAJC226K025RNJ, $0.78 , $1.56 
+"C11, C12, C25, C30, ",4,4.7uF,CP_Small,CP_1206,Digikey,F931E475KAA, $0.58 , $2.32 
+"D1, ",1,1N6263,D_Schottky_Small,SOD-123,Digikey,1N6263W-7-F, $0.47 , $0.47 
 "D2, ",1,OVEN,LED_Small,LED_3mm_THT_RA,Digikey,,,
 "D3, ",1,TLOCK,LED_Small,LED_3mm_THT_RA,Digikey,,,
 "D4, ",1,POWER,LED_Small,LED_3mm_THT_RA,Digikey,,,
