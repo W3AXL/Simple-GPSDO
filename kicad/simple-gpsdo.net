@@ -1,7 +1,7 @@
 (export (version D)
   (design
     (source C:\Users\psmcdonn\Documents\GitHub\Simple-GPSDO\kicad\simple-gpsdo.sch)
-    (date "10/22/2021 4:08:45 PM")
+    (date "10/22/2021 4:31:05 PM")
     (tool "Eeschema (5.1.9)-1")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
@@ -489,7 +489,7 @@
       (sheetpath (names /) (tstamps /))
       (tstamp 5F673D13))
     (comp (ref F1)
-      (value 3A)
+      (value 2A)
       (footprint Fuse:Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder)
       (datasheet ~)
       (libsource (lib Device) (part Polyfuse_Small) (description "Resettable fuse, polymeric positive temperature coefficient, small symbol"))

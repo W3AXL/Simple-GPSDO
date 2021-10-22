@@ -12,7 +12,7 @@ Ref,Qnty,Value,Desc,Footprint,Vendor,P/N, Ea , Tot
 "D4, ",1,POWER,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/ID, $0.53 , $0.53 
 "D5, ",1,GLOCK,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
 "D6, ",1,PPS,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
-"F1, ",1,3A,Polyfuse_Small,F_1206,Digikey,,,
+"F1, ",1,2A,Polyfuse_Small,F_1206,Digikey,0685T2000-01, $0.32 , $0.32 
 "FB1, FB2, FB3, ",3,Ferrite,Ferrite_Bead_Small,FB_1206,Digikey,,,
 "J1, ",1,PPS_OUT,Conn_Coaxial,01x02 Pin Header & Mating Socket,Digikey,,,
 "J2, ",1,PWR,Barrel_Jack_Switch,CUI_PJ-102AH,Digikey,,,
