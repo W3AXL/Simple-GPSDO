@@ -529,7 +529,7 @@ U 1 1 5FA232C1
 P 4900 2950
 F 0 "C11" H 4988 2996 50  0000 L CNN
 F 1 "4.7uF" H 4988 2905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 4900 2950 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 4900 2950 50  0001 C CNN
 F 3 "~" H 4900 2950 50  0001 C CNN
 	1    4900 2950
 	1    0    0    -1  
@@ -551,7 +551,7 @@ U 1 1 5FAAD2FC
 P 5300 2950
 F 0 "C12" H 5388 2996 50  0000 L CNN
 F 1 "4.7uF" H 5388 2905 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5300 2950 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 5300 2950 50  0001 C CNN
 F 3 "~" H 5300 2950 50  0001 C CNN
 	1    5300 2950
 	1    0    0    -1  
@@ -741,7 +741,7 @@ U 1 1 6000C5EC
 P 1550 1350
 F 0 "C25" H 1638 1396 50  0000 L CNN
 F 1 "4.7uF" H 1638 1305 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 1550 1350 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 1550 1350 50  0001 C CNN
 F 3 "~" H 1550 1350 50  0001 C CNN
 	1    1550 1350
 	-1   0    0    -1  
@@ -1280,17 +1280,6 @@ Wire Wire Line
 	7900 3600 7900 3650
 Text GLabel 7200 3850 2    50   Input ~ 0
 OSC_CTRL
-$Comp
-L Device:C_Small C23
-U 1 1 5F6CD16E
-P 6650 3550
-F 0 "C23" H 6559 3504 50  0000 R CNN
-F 1 "0.1uF" H 6559 3595 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6650 3550 50  0001 C CNN
-F 3 "~" H 6650 3550 50  0001 C CNN
-	1    6650 3550
-	1    0    0    1   
-$EndComp
 $Comp
 L power:+5V #PWR018
 U 1 1 6199610A
@@ -2134,7 +2123,7 @@ U 1 1 5F7E248C
 P 5600 6900
 F 0 "C30" H 5688 6946 50  0000 L CNN
 F 1 "4.7uF" H 5688 6855 50  0000 L CNN
-F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 5600 6900 50  0001 C CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 5600 6900 50  0001 C CNN
 F 3 "~" H 5600 6900 50  0001 C CNN
 	1    5600 6900
 	1    0    0    -1  
@@ -2223,4 +2212,15 @@ Text Notes 8350 4200 0    40   ~ 0
 GPS ANT connects to module\nvia SMA-u.FL bulkhead & jumper
 Text Notes 8850 3050 0    40   ~ 0
 PPS connection is a jumper\nto bulkhead SMA
+$Comp
+L Device:CP_Small C14
+U 1 1 61775BC3
+P 6650 3550
+F 0 "C14" H 6738 3596 50  0000 L CNN
+F 1 "4.7uF" H 6738 3505 50  0000 L CNN
+F 2 "Capacitor_Tantalum_SMD:CP_EIA-3216-10_Kemet-I_Pad1.58x1.35mm_HandSolder" H 6650 3550 50  0001 C CNN
+F 3 "~" H 6650 3550 50  0001 C CNN
+	1    6650 3550
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC

@@ -906,7 +906,7 @@ L Device:D_Schottky_Small D1
 U 1 1 5F66A41A
 P 7600 5900
 F 0 "D1" H 7600 5693 50  0000 C CNN
-F 1 "1N5711" H 7600 5784 50  0000 C CNN
+F 1 "1N6263" H 7600 5784 50  0000 C CNN
 F 2 "Diode_SMD:D_SOD-123" V 7600 5900 50  0001 C CNN
 F 3 "~" V 7600 5900 50  0001 C CNN
 	1    7600 5900
@@ -1280,17 +1280,6 @@ Wire Wire Line
 	7900 3600 7900 3650
 Text GLabel 7200 3850 2    50   Input ~ 0
 OSC_CTRL
-$Comp
-L Device:C_Small C23
-U 1 1 5F6CD16E
-P 6650 3550
-F 0 "C23" H 6559 3504 50  0000 R CNN
-F 1 "0.1uF" H 6559 3595 50  0000 R CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6650 3550 50  0001 C CNN
-F 3 "~" H 6650 3550 50  0001 C CNN
-	1    6650 3550
-	1    0    0    1   
-$EndComp
 $Comp
 L power:+5V #PWR018
 U 1 1 6199610A
@@ -2223,4 +2212,15 @@ Text Notes 8350 4200 0    40   ~ 0
 GPS ANT connects to module\nvia SMA-u.FL bulkhead & jumper
 Text Notes 8850 3050 0    40   ~ 0
 PPS connection is a jumper\nto bulkhead SMA
+$Comp
+L Device:CP_Small C14
+U 1 1 61775BC3
+P 6650 3550
+F 0 "C14" H 6738 3596 50  0000 L CNN
+F 1 "4.7uF" H 6738 3505 50  0000 L CNN
+F 2 "Capacitor_SMD:C_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 6650 3550 50  0001 C CNN
+F 3 "~" H 6650 3550 50  0001 C CNN
+	1    6650 3550
+	-1   0    0    -1  
+$EndComp
 $EndSCHEMATC
