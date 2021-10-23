@@ -1,5 +1,4 @@
 (fp_lib_table
-  (lib (name nrg-control-box)(type KiCad)(uri ${KIPRJMOD}/../../NRG-Anemometer-Display/kicad/nrg-control-box.pretty)(options "")(descr ""))
   (lib (name McCoy)(type KiCad)(uri ${KIPRJMOD}/McCoy.pretty)(options "")(descr ""))
   (lib (name raltron)(type KiCad)(uri ${KIPRJMOD}/raltron.pretty)(options "")(descr ""))
   (lib (name Bliley)(type KiCad)(uri ${KIPRJMOD}/Bliley.pretty)(options "")(descr ""))

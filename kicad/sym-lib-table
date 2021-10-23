@@ -4,4 +4,5 @@
   (lib (name Raltron-OX4000)(type Legacy)(uri ${KIPRJMOD}/Raltron-OX4000.lib)(options "")(descr ""))
   (lib (name Bliley)(type Legacy)(uri ${KIPRJMOD}/Bliley.lib)(options "")(descr ""))
   (lib (name AP6320X)(type Legacy)(uri ${KIPRJMOD}/AP6320X.lib)(options "")(descr ""))
+  (lib (name XRP6272)(type Legacy)(uri ${KIPRJMOD}/XRP6272.lib)(options "")(descr ""))
 )
