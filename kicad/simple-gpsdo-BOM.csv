@@ -1,4 +1,4 @@
-Ref,Qnty,Value,Desc,Footprint,Vendor,P/N, Ea , Tot 
+Ref,Qnty,Value,Desc,Footprint,Vendor,P/N,  Ea  ,  Tot  
 "C1, C2, ",2,6.8pF,C_Small,C_0805,Digikey,885012007050, $0.10 , $0.20 
 "C3, C32, C34, C35, ",4,10uF,CP_Small,CP_1411 (3528),Digikey,TAJB106K025RNJ, $0.70 , $2.80 
 "C4, ",1,1uF,C_Small,C_0805,Digikey,CL21F105ZBFNNNG, $0.14 , $0.14 
@@ -13,39 +13,44 @@ Ref,Qnty,Value,Desc,Footprint,Vendor,P/N, Ea , Tot
 "D5, ",1,GLOCK,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
 "D6, ",1,PPS,LED_Small,LED_3mm_THT_RA,Digikey,WP934CB/GD, $0.53 , $0.53 
 "F1, ",1,2A,Polyfuse_Small,F_1206,Digikey,0685T2000-01, $0.32 , $0.32 
-"FB1, FB2, FB3, ",3,Ferrite,Ferrite_Bead_Small,FB_1206,Digikey,,,
-"J1, ",1,PPS_OUT,Conn_Coaxial,01x02 Pin Header & Mating Socket,Digikey,,,
-"J2, ",1,PWR,Barrel_Jack_Switch,CUI_PJ-102AH,Digikey,,,
-"J3, ",1,ISP,AVR-ISP-6-Connector,02x03 SMD Header,Digikey,,,
-"J6, ",1,USB_B_Micro,USB_B_Micro,Wuerth_65100516121_Horizontal,Digikey,,,
-"J7, ",1,NEO-6M,Conn_01x05_Female,1x05_P2.54mm_Socket_Vert_SMD_Pin1Left,Digikey,,,
-"J8, ",1,10MHz_OUT,Conn_Coaxial_x2,molex:734152980,Digikey,,,
-"JP1, ",1,ISP_VCC,Jumper_NO_Small,Solder Jumper,Digikey,,,
+"FB1, FB2, FB3, ",3,Ferrite,Ferrite_Bead_Small,FB_1206,Digikey,2512065007Y3, $0.17 , $0.51 
+"J1, ",1,PPS_OUT,Conn_Coaxial,01x02 Pin Header & Mating Socket,Digikey,RS1-02-G, $0.18 , $0.18 
+"J2, ",1,PWR,Barrel_Jack_Switch,CUI_PJ-102AH,Digikey,PJ-102AH, $0.76 , $0.76 
+"J3, ",1,ISP,AVR-ISP-6-Connector,02x03 SMD Header,Digikey,10129383-906001ALF, $0.18 , $0.18 
+"J6, ",1,USB_B_Micro,USB_B_Micro,Wuerth_65100516121_Horizontal,Digikey,65100516121, $1.37 , $1.37 
+"J7, ",1,NEO-6M,Conn_01x05_Female,1x05_P2.54mm_Socket_Vert_SMD_Pin1Left,Digikey,NPTC051KFXC-RC, $0.86 , $0.86 
+"J8, ",1,10MHz_OUT,Conn_Coaxial_x2,molex:734152980,Digikey,0734152980, $6.77 , $6.77 
+"JP1, ",1,ISP_VCC,Jumper_NO_Small,Solder Jumper,N/A,,,
 "JP2, ",1,RST_BP,Jumper_NC_Small,01x02 Pin Header,On-Hand,,,
-"L1, ",1,3.3uH,L_Small,L_1206,Digikey,,,
-"L2, L3, ",2,3.3uH,L_Small,L_Taiyo-Yuden_NR-50xx_HandSoldering,Digikey,,,
-"Q1, ",1,DMP3099L,Q_PMOS_GSD,SOT-23,Digikey,,,
-"R1, R2, ",2,22R,R_Small,R_0805,Digikey,,,
-"R3, R18, R20, R26, ",4,10k,R_Small,R_0805,Digikey,,,
-"R4, R6, ",2,39k,R_Small,R_0805,Digikey,,,
-"R5, R12, ",2,10M,R_Small,R_0805,Digikey,,,
-"R7, R10, R15, R16, R25, ",5,100R,R_Small,R_0805,Digikey,,,
-"R8, R9, R13, R14, R17, ",5,470R,R_Small,R_0805,Digikey,,,
-"R11, ",1,3k9,R_Small,R_0805,Digikey,,,
-"R23, R24, ",2,50R,R_Small,R_0805,Digikey,,,
-"R27, ",1,65k,R_Small,R_0805,Digikey,,,
-"R28, ",1,68R,R_Small,R_0805,Digikey,,,
-"R29, ",1,2R,R_Small,R_0805,Digikey,,,
-"SW1, ",1,RST,SW_Push,01x02 Pin Header,Digikey,,,
-"TP1, ",1,PPS,TestPoint,TestPoint,Digikey,,,
-"TP2, ",1,ADC3,TestPoint,TestPoint,Digikey,,,
-"TP3, ",1,ADC1,TestPoint,TestPoint,Digikey,,,
-"U1, ",1,BD50FC0FP-E2,L7805,TO-252-2,Digikey,,,
-"U2, ",1,ATmega32U4-AU,ATmega32U4-AU,TQFP44-10mm,Digikey,,,
-"U3, ",1,MC74HC390,MC74HC390,SOIC-16_3.9x9.9mm,Digikey,,,
-"U4, ",1,CD74HC4046AM96,CD74HC4046AM96,SOIC-16_3.9x9.9mm,Digikey,,,
-"U7, ",1,LM7171,AD8610,SOIC-8_3.9x4.9mm,Digikey,,,
-"U8, ",1,LM35-D,LM35-D,SOIC-8_3.9x4.9mm,Digikey,,,
-"U9, ",1,AP62150WU-7,AP62301WU-7,TSOT-23-6,Digikey,,,
-"Y1, ",1,16MHz,Crystal_GND24,Crystal_SMD_SeikoEpson_TSX3225-4Pin_3.2x2.5mm,Digikey,,,
-"Y2, ",1,NV47X,NV47X,Bliley:CO-08,Digikey,,,
+"L1, ",1,3.3uH,L_Small,L_1206,Digikey,LQM31PN3R3M00L, $0.36 , $0.36 
+"L2, L3, ",2,3.3uH,L_Small,L_Taiyo-Yuden_NR-50xx_HandSoldering,Digikey,NRS5020T3R3NMGJ, $0.33 , $0.66 
+"Q1, ",1,PJA3407,Q_PMOS_GSD,SOT-23,Digikey,PJA3407_R1_00001, $0.47 , $0.47 
+"R1, R2, ",2,22R,R_Small,R_0805,Digikey,RCS080522R0JNEA, $0.20 , $0.40 
+"R3, R18, R19, R20, R21, R26, ",6,10k,R_Small,R_0805,Digikey,CRCW080510K0FKEBC, $0.10 , $0.60 
+"R4, R6, ",2,39k,R_Small,R_0805,Digikey,CRCW080539K0FKEAC, $0.10 , $0.20 
+"R5, R12, ",2,10M,R_Small,R_0805,Digikey,CRCW080510M0JNEA, $0.10 , $0.20 
+"R7, R10, R15, R16, R25, ",5,100R,R_Small,R_0805,Digikey,CRCW0805100RJNEAC, $0.10 , $0.50 
+"R8, R9, R13, R14, R17, ",5,470R,R_Small,R_0805,Digikey,RCG0805470RJNEA, $0.10 , $0.50 
+"R11, ",1,3k9,R_Small,R_0805,Digikey,CRCW08053K90FKEA, $0.10 , $0.10 
+"R23, R24, ",2,50R,R_Small,R_0805,Digikey,CRCW080549R9FKEAC, $0.10 , $0.20 
+"R22, R27, ",2,65k,R_Small,R_0805,Digikey,CRCW080564K9FKEA, $0.10 , $0.20 
+"R28, ",1,68R,R_Small,R_0805,Digikey,CRCW080568R0JNEA, $0.10 , $0.10 
+"R29, ",1,2R,R_Small,R_0805,Digikey,CRCW08052R00FKEA, $0.10 , $0.10 
+"SW1, ",1,RST,SW_Push,01x02 Pin Header,On-Hand,,,
+"TP1, ",1,PPS,TestPoint,TestPoint,N/A,,, $-   
+"TP2, ",1,ADC3,TestPoint,TestPoint,N/A,,, $-   
+"TP3, ",1,ADC1,TestPoint,TestPoint,N/A,,, $-   
+"U1, ",1,XRP6272ITC5TR-F,L7805,TO-252-5,Digikey,XRP6272ITC5TR-F, $1.01 , $1.01 
+"U2, ",1,ATmega32U4-AU,ATmega32U4-AU,TQFP44-10mm,Digikey,ATMEGA32U4-AU, $5.16 , $5.16 
+"U3, ",1,MC74HC390,MC74HC390,SOIC-16_3.9x9.9mm,Digikey,MC74HC390ADR2G, $0.68 , $0.68 
+"U4, ",1,CD74HC4046AM96,CD74HC4046AM96,SOIC-16_3.9x9.9mm,Digikey,CD74HC4046AM96, $0.65 , $0.65 
+"U7, ",1,LM7171,AD8610,SOIC-8_3.9x4.9mm,Digikey,LM7171BIMX/NOPB, $3.77 , $3.77 
+"U8, ",1,LM35-D,LM35-D,SOIC-8_3.9x4.9mm,Digikey,LM35DM, $3.55 , $3.55 
+"U9, ",1,AP62150WU-7,AP62150WU-7,TSOT-23-6,Digikey,AP62150WU-7, $0.43 , $0.43 
+"Y1, ",1,16MHz,Crystal_GND24,Crystal_SMD_SeikoEpson_TSX3225-4Pin_3.2x2.5mm,Digikey,TSX-3225 16.0000MF18X-AC6, $0.33 , $0.33 
+"Y2, ",1,NV47X,NV47X,Bliley:CO-08,On-Hand,,, $-   
+,,,,,,,,
+,1,,,SMA to U.FL Pigtail Bulkhead,On-Hand,,,
+,,,,,,,,
+,,,,,,,,
+,,,,,,TOTAL,, $42.95 

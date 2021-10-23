@@ -1,4 +1,4 @@
-19097277850996267
+19157233616586033
 Battery
 BatteryHolder_Bulgin_BX0036_1xC
 Bulgin Battery Holder, BX0036, Battery Type C (https://www.bulgin.com/products/pub/media/bulgin/data/Battery_holders.pdf)
@@ -2814,6 +2814,13 @@ capacitor
 2
 2
 Capacitor_SMD
+C_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
 C_0603_1608Metric_Pad1.08x0.95mm_HandSolder
 Capacitor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 capacitor handsolder
@@ -2824,6 +2831,13 @@ Capacitor_SMD
 C_0805_2012Metric
 Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf, https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
 capacitor
+0
+2
+2
+Capacitor_SMD
+C_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Capacitor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+capacitor handsolder
 0
 2
 2
@@ -2863,6 +2877,13 @@ capacitor handsolder
 2
 2
 Capacitor_SMD
+C_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+Capacitor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
 C_1210_3225Metric
 Capacitor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 capacitor
@@ -2877,9 +2898,37 @@ capacitor handsolder
 2
 2
 Capacitor_SMD
+C_1210_3225Metric_Pad1.42x2.65mm_HandSolder
+Capacitor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
+C_1806_4516Metric
+Capacitor SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+Capacitor_SMD
+C_1806_4516Metric_Pad1.57x1.80mm_HandSolder
+Capacitor SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
 C_1812_4532Metric
 Capacitor SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 capacitor
+0
+2
+2
+Capacitor_SMD
+C_1812_4532Metric_Pad1.30x3.40mm_HandSolder
+Capacitor SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
+capacitor handsolder
 0
 2
 2
@@ -2900,6 +2949,27 @@ capacitor
 Capacitor_SMD
 C_1825_4564Metric_Pad1.57x6.80mm_HandSolder
 Capacitor SMD 1825 (4564 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size from: IPC-SM-782 page 76, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
+C_1825_4564Metric_Pad1.88x6.70mm_HandSolder
+Capacitor SMD 1825 (4564 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size from: http://datasheets.avx.com/AVX-HV_MLCC.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
+C_2010_5025Metric
+Capacitor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+Capacitor_SMD
+C_2010_5025Metric_Pad1.52x2.65mm_HandSolder
+Capacitor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 capacitor handsolder
 0
 2
@@ -2928,6 +2998,34 @@ capacitor
 Capacitor_SMD
 C_2225_5664Metric_Pad1.80x6.60mm_HandSolder
 Capacitor SMD 2225 (5664 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size from: http://datasheets.avx.com/AVX-HV_MLCC.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
+C_2512_6332Metric
+Capacitor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+Capacitor_SMD
+C_2512_6332Metric_Pad1.52x3.35mm_HandSolder
+Capacitor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+capacitor handsolder
+0
+2
+2
+Capacitor_SMD
+C_2816_7142Metric
+Capacitor SMD 2816 (7142 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size from: https://www.vishay.com/docs/30100/wsl.pdf), generated with kicad-footprint-generator
+capacitor
+0
+2
+2
+Capacitor_SMD
+C_2816_7142Metric_Pad3.20x4.45mm_HandSolder
+Capacitor SMD 2816 (7142 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size from: https://www.vishay.com/docs/30100/wsl.pdf), generated with kicad-footprint-generator
 capacitor handsolder
 0
 2
@@ -48923,6 +49021,27 @@ diode handsolder
 2
 2
 Diode_SMD
+D_1806_4516Metric
+Diode SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+Diode_SMD
+D_1806_4516Metric_Castellated
+Diode SMD 1806 (4516 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode castellated
+0
+2
+2
+Diode_SMD
+D_1806_4516Metric_Pad1.57x1.80mm_HandSolder
+Diode SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode handsolder
+0
+2
+2
+Diode_SMD
 D_1812_4532Metric
 Diode SMD 1812 (4532 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.nikhef.nl/pub/departments/mt/projects/detectorR_D/dtddice/ERJ2G.pdf), generated with kicad-footprint-generator
 diode
@@ -50721,6 +50840,97 @@ One digit LED 7 segment SA39-11 SC39-11 SA39-12 SC39-12
 0
 10
 10
+ESP8266
+ESP-01
+Module, ESP-8266, ESP-01, 8 pin
+Module ESP-8266 ESP8266
+0
+8
+8
+ESP8266
+ESP-03
+Module, ESP-8266, ESP-03, 14 pad, SMD
+Module ESP-8266 ESP8266
+0
+14
+14
+ESP8266
+ESP-06
+
+
+0
+20
+20
+ESP8266
+ESP-07S
+Module, ESP-8266, ESP-07S, 14 pad, SMD
+Module ESP-8266 ESP8266
+0
+16
+16
+ESP8266
+ESP-07v2
+Module, ESP-8266, ESP-07v2, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+16
+16
+ESP8266
+ESP-12
+Module, ESP-8266, ESP-12, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+16
+16
+ESP8266
+ESP-12E
+Module, ESP-8266, ESP-12, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+22
+22
+ESP8266
+ESP-12E_SMD
+Module, ESP-8266, ESP-12, 16 pad, SMD
+Module ESP-8266 ESP8266
+0
+22
+22
+ESP8266
+ESP-13-WROOM-02
+Module, ESP-8266, ESP-13-WROOM-02, 18 pad, SMD
+Module ESP-8266 ESP8266
+0
+19
+19
+ESP8266
+ESP-201
+Module, ESP-8266, ESP-201, 26 pin, through hole, 0.1 inch
+Module ESP-8266 ESP8266
+0
+26
+26
+ESP8266
+ESP12F-Devkit-V3
+
+
+0
+30
+30
+ESP8266
+NodeMCU-LoLinV3
+
+
+0
+30
+30
+ESP8266
+NodeMCU1.0(12-E)
+
+
+0
+30
+30
 Ferrite_THT
 LairdTech_28C0236-0JW-10
 Ferrite, vertical, LairdTech 28C0236-0JW-10, https://assets.lairdtech.com/home/brandworld/files/28C0236-0JW-10.pdf, JW Miller core https://www.bourns.com/products/magnetic-products/j.w.-miller-through-hole-ferrite-beads-emi-filters
@@ -50883,6 +51093,13 @@ emi filter
 5
 5
 Fuse
+Fuse_0201_0603Metric
+Fuse SMD 0201 (0603 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20052/crcw0201e3.pdf), generated with kicad-footprint-generator
+resistor
+0
+4
+2
+Fuse
 Fuse_0402_1005Metric
 Fuse SMD 0402 (1005 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 fuse
@@ -50946,6 +51163,13 @@ fuse handsolder
 2
 2
 Fuse
+Fuse_01005_0402Metric
+Fuse SMD 01005 (0402 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.vishay.com/docs/20056/crcw01005e3.pdf), generated with kicad-footprint-generator
+resistor
+0
+4
+2
+Fuse
 Fuse_1206_3216Metric
 Fuse SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 fuse
@@ -50984,6 +51208,27 @@ Fuse
 Fuse_1210_3225Metric_Pad1.42x2.65mm_HandSolder
 Fuse SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 fuse handsolder
+0
+2
+2
+Fuse
+Fuse_1806_4516Metric
+Fuse SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+Fuse
+Fuse_1806_4516Metric_Castellated
+Fuse SMD 1806 (4516 Metric), castellated end terminal, IPC_7351. (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+fuse castellated
+0
+2
+2
+Fuse
+Fuse_1806_4516Metric_Pad1.57x1.80mm_HandSolder
+Fuse SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+resistor handsolder
 0
 2
 2
@@ -55209,6 +55454,13 @@ LED handsolder
 2
 2
 LED_SMD
+LED_01005_0402Metric
+LED SMD 01005 (0402 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.vishay.com/docs/20056/crcw01005e3.pdf), generated with kicad-footprint-generator
+LED
+0
+4
+2
+LED_SMD
 LED_1206_3216Metric
 LED SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 LED
@@ -55253,6 +55505,27 @@ LED castellated
 LED_SMD
 LED_1210_3225Metric_Pad1.42x2.65mm_HandSolder
 LED SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+LED handsolder
+0
+2
+2
+LED_SMD
+LED_1806_4516Metric
+LED SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+diode
+0
+2
+2
+LED_SMD
+LED_1806_4516Metric_Castellated
+LED SMD 1806 (4516 Metric), castellated end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+LED castellated
+0
+2
+2
+LED_SMD
+LED_1806_4516Metric_Pad1.57x1.80mm_HandSolder
+LED SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
 LED handsolder
 0
 2
@@ -75138,6 +75411,13 @@ resistor handsolder
 2
 2
 Resistor_SMD
+R_0603_1608Metric_Pad1.05x0.95mm_HandSolder
+Resistor SMD 0603 (1608 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
 R_0612_1632Metric
 Resistor SMD 0612 (1632 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20019/rcwe.pdf), generated with kicad-footprint-generator
 resistor
@@ -75159,6 +75439,13 @@ resistor
 2
 2
 Resistor_SMD
+R_0805_2012Metric_Pad1.15x1.40mm_HandSolder
+Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://docs.google.com/spreadsheets/d/1BsfQQcO9C6DZCsRaXUlFlo91Tg2WpOkGARC1WS5S8t0/edit?usp=sharing), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
 R_0805_2012Metric_Pad1.20x1.40mm_HandSolder
 Resistor SMD 0805 (2012 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 resistor handsolder
@@ -75175,6 +75462,13 @@ resistor
 Resistor_SMD
 R_0815_2038Metric_Pad1.20x4.05mm_HandSolder
 Resistor SMD 0815 (2038 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.susumu.co.jp/common/pdf/n_catalog_partition07_en.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
+R_0815_2038Metric_Pad1.53x4.00mm_HandSolder
+Resistor SMD 0815 (2038 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.yageo.com/documents/recent/PYu-PRPFPH_521_RoHS_L_0.pdf), generated with kicad-footprint-generator
 resistor handsolder
 0
 2
@@ -75222,6 +75516,13 @@ resistor handsolder
 2
 2
 Resistor_SMD
+R_1206_3216Metric_Pad1.42x1.75mm_HandSolder
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
 R_1210_3225Metric
 Resistor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 resistor
@@ -75236,6 +75537,13 @@ resistor handsolder
 2
 2
 Resistor_SMD
+R_1210_3225Metric_Pad1.42x2.65mm_HandSolder
+Resistor SMD 1210 (3225 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
 R_1218_3246Metric
 Resistor SMD 1218 (3246 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.vishay.com/docs/20035/dcrcwe3.pdf), generated with kicad-footprint-generator
 resistor
@@ -75245,6 +75553,20 @@ resistor
 Resistor_SMD
 R_1218_3246Metric_Pad1.22x4.75mm_HandSolder
 Resistor SMD 1218 (3246 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.vishay.com/docs/20035/dcrcwe3.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
+R_1806_4516Metric
+Resistor SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
+resistor
+0
+2
+2
+Resistor_SMD
+R_1806_4516Metric_Pad1.57x1.80mm_HandSolder
+Resistor SMD 1806 (4516 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: https://www.modelithics.com/models/Vendor/MuRata/BLM41P.pdf), generated with kicad-footprint-generator
 resistor handsolder
 0
 2
@@ -75278,6 +75600,13 @@ resistor handsolder
 2
 2
 Resistor_SMD
+R_2010_5025Metric_Pad1.52x2.65mm_HandSolder
+Resistor SMD 2010 (5025 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
 R_2512_6332Metric
 Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal, (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
 resistor
@@ -75287,6 +75616,13 @@ resistor
 Resistor_SMD
 R_2512_6332Metric_Pad1.40x3.35mm_HandSolder
 Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+Resistor_SMD
+R_2512_6332Metric_Pad1.52x3.35mm_HandSolder
+Resistor SMD 2512 (6332 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: http://www.tortai-tech.com/upload/download/2011102023233369053.pdf), generated with kicad-footprint-generator
 resistor handsolder
 0
 2
@@ -81178,97 +81514,6 @@ THT Terminal Block WAGO 804-324 45Degree pitch 7.5mm size 179x15mm^2 drill 1.2mm
 0
 48
 24
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650073_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650073.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650074_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650074.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650094_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650094.pdf)
-screw terminal thread redcube thr power connector
-0
-16
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650173_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650173.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650174_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650174.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650194_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650194.pdf)
-screw terminal thread redcube thr power connector
-0
-18
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74650195_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74650195.pdf)
-screw terminal thread redcube thr power connector
-0
-18
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRBU_74655095_THR
-REDCUBE THR with internal through-hole thread WP-THRBU (https://www.we-online.de/katalog/datasheet/74655095.pdf)
-screw terminal thread redcube thr power connector
-0
-16
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRSH_74651173_THR
-REDCUBE THR with internal through-hole thread WP-THRSH (https://www.we-online.de/katalog/datasheet/74651173.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRSH_74651174_THR
-REDCUBE THR with internal through-hole thread WP-THRSH (https://www.we-online.de/katalog/datasheet/74651174.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRSH_74651175_THR
-REDCUBE THR with internal through-hole thread WP-THRSH (https://www.we-online.de/katalog/datasheet/74651175.pdf)
-screw terminal thread redcube thr power connector
-0
-8
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRSH_74651194_THR
-REDCUBE THR with internal through-hole thread WP-THRSH (https://www.we-online.de/katalog/datasheet/74651194.pdf)
-screw terminal thread redcube thr power connector
-0
-18
-1
-TerminalBlock_Wuerth
-Wuerth_REDCUBE-THR_WP-THRSH_74651195_THR
-REDCUBE THR with internal through-hole thread WP-THRSH (https://www.we-online.de/katalog/datasheet/74651195.pdf)
-screw terminal thread redcube thr power connector
-0
-18
-1
 TestPoint
 TestPoint_2Pads_Pitch2.54mm_Drill0.8mm
 Test point with 2 pins, pitch 2.54mm, drill diameter 0.8mm
@@ -83047,6 +83292,27 @@ varistor SIOV
 0
 2
 2
+misc_footprints
+54-00164
+
+
+0
+0
+0
+misc_footprints
+L_Bourns_1919
+
+
+0
+2
+2
+misc_footprints
+UJ2-MBH-1-SMT-TR
+
+
+0
+9
+6
 molex
 734152980
 
