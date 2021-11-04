@@ -1,0 +1,9 @@
+GPSDO Calibration
+
+h1 diff_ns:	1550 ppb average
+h65535 diff_ns:	-990 ppb average
+
+VCO Range (ppb) = 2540 ppb
+
+Gain = 65535 / VCO Range = 25.80
+
