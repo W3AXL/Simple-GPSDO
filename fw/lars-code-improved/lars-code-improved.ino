@@ -31,6 +31,10 @@
 
 #include <EEPROM.h>
 
+/***********************************************************************************************
+ *  Defines
+ **********************************************************************************************/
+
 int warmUpTime = 300; // 300 gives five minutes hold during eg OCXO or Rb warmup. Set to eg 3 for VCTCXO
 long dacValueOut = 32768; // 16bit PWM-DAC setvalue=startvalue Max 65535 (if nothing stored in the EEPROM)
 long dacValue; // this is also same as "DACvalueOld" Note: is "0-65535" * timeconst

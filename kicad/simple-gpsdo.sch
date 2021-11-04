@@ -193,7 +193,7 @@ Text GLabel 4100 1600 2    50   Input ~ 0
 ISP_SCK
 Text GLabel 4300 4400 2    50   Input ~ 0
 ADC0
-Text GLabel 4100 1900 2    50   Input ~ 0
+Text GLabel 4100 3100 2    50   Input ~ 0
 GPS_PPS
 $Comp
 L Connector:TestPoint TP1
@@ -206,13 +206,13 @@ F 3 "~" H 9100 4450 50  0001 C CNN
 	1    8900 4450
 	1    0    0    -1  
 $EndComp
-Text GLabel 4100 2400 2    50   Input ~ 0
-5MHz
-Text GLabel 4100 3100 2    50   Input ~ 0
-POWER_OK
-Text GLabel 4100 3200 2    50   Input ~ 0
-OVEN_TEMP
 Text GLabel 4100 3300 2    50   Input ~ 0
+5MHz
+Text GLabel 4100 2400 2    50   Input ~ 0
+POWER_OK
+Text GLabel 4100 2800 2    50   Input ~ 0
+OVEN_TEMP
+Text GLabel 4100 1900 2    50   Input ~ 0
 GPS_LOCK
 Text GLabel 7100 1950 0    50   Input ~ 0
 10MHz
@@ -221,7 +221,6 @@ NoConn ~ 4100 3600
 NoConn ~ 4100 3700
 NoConn ~ 4100 3900
 NoConn ~ 4100 4000
-NoConn ~ 4100 2800
 NoConn ~ 4100 1500
 $Comp
 L Amplifier_Operational:AD8610 U7
@@ -1448,17 +1447,6 @@ Wire Wire Line
 	2700 1900 2900 1900
 Wire Wire Line
 	2650 1500 2900 1500
-$Comp
-L simple-gpsdo-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U2
-U 1 1 5F60CD50
-P 3500 3000
-F 0 "U2" H 3600 1200 50  0000 L CNN
-F 1 "ATmega32U4-AU" H 3600 1100 50  0000 L CNN
-F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 3500 3000 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 3500 3000 50  0001 C CNN
-	1    3500 3000
-	1    0    0    -1  
-$EndComp
 Connection ~ 2000 4100
 Wire Wire Line
 	2000 4100 2000 4200
@@ -2286,4 +2274,16 @@ F 3 "~" H 5550 6900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 5700 6650
+$Comp
+L simple-gpsdo-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U2
+U 1 1 5F60CD50
+P 3500 3000
+F 0 "U2" H 3600 1200 50  0000 L CNN
+F 1 "ATmega32U4-AU" H 3600 1100 50  0000 L CNN
+F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 3500 3000 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 3500 3000 50  0001 C CNN
+	1    3500 3000
+	1    0    0    -1  
+$EndComp
+NoConn ~ 4100 3200
 $EndSCHEMATC
