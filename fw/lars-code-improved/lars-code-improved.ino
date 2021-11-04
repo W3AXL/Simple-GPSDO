@@ -40,6 +40,8 @@
 #define LED_TIME    13
 #define LED_GLOCK   8
 
+#define ADC_VREF    1111.0  // ADC internal reference voltage, in mV
+
 /***********************************************************************************************
  *  Lars Globals
  **********************************************************************************************/
@@ -1136,7 +1138,7 @@ float temperature_to_C(int RawADC, int sensor)
   switch (sensor) {
 
     case 1: //LM35
-    TempC = RawADC * 1100.0 / 1024.0 *0.1;
+    TempC = RawADC * ADC_VREF / 1024.0 * 0.1;
     break;
     case 2: //10k NTC beta 3950 + 68k (15-60C)
     TempC = floatADC * floatADC  * 0.0002536 - floatADC  * 0.2158 + 88.48 - floatADC  * floatADC  * floatADC  * 0.0000001179;   
@@ -1154,7 +1156,7 @@ float temperature_to_C(int RawADC, int sensor)
     TempC = RawADC * 1070.0 / 1024.0 *0.1;
     break;
     case 9: //LM35 fahrenheit
-    TempC = RawADC * 1100.0 / 1024.0 *0.1;
+    TempC = RawADC * ADC_VREF / 1024.0 *0.1;
     TempC = TempC * 1.8 + 32; 
     break;
     default:
@@ -1289,7 +1291,7 @@ void setup()
   tempADC2_Filtered = tempRef * 100;
 
 // Set analog ref to about 1.1 Volt  
-  analogReference(INTERNAL);
+  //analogReference(INTERNAL);
   TIC_Value = analogRead(A0);// just a dummy read
   
 
