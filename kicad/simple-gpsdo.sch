@@ -203,8 +203,6 @@ Text GLabel 4100 2800 2    50   Input ~ 0
 OVEN_TEMP
 Text GLabel 4100 1900 2    50   Input ~ 0
 GPS_LOCK
-Text GLabel 7100 1950 0    50   Input ~ 0
-10MHz
 NoConn ~ 4100 2100
 NoConn ~ 4100 3600
 NoConn ~ 4100 3700
@@ -216,7 +214,7 @@ L Amplifier_Operational:AD8610 U7
 U 1 1 5F779082
 P 8000 1850
 F 0 "U7" H 8000 2150 50  0000 L CNN
-F 1 "LM7171" H 8000 2050 50  0000 L CNN
+F 1 "TLV3541IDR" H 8000 2050 50  0000 L CNN
 F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8050 1900 50  0001 C CNN
 F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8610_8620.pdf" H 8150 2000 50  0001 C CNN
 	1    8000 1850
@@ -325,25 +323,14 @@ F 3 "" H 6000 1750 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 $Comp
-L Device:R_Small R18
-U 1 1 5F835714
-P 7400 1950
-F 0 "R18" V 7500 1950 50  0000 C BNN
-F 1 "10k" V 7400 1950 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7400 1950 50  0001 C CNN
-F 3 "~" H 7400 1950 50  0001 C CNN
-	1    7400 1950
-	0    1    1    0   
-$EndComp
-$Comp
 L power:GND #PWR043
 U 1 1 5F857189
-P 7600 1800
-F 0 "#PWR043" H 7600 1550 50  0001 C CNN
-F 1 "GND" H 7605 1627 50  0001 C CNN
-F 2 "" H 7600 1800 50  0001 C CNN
-F 3 "" H 7600 1800 50  0001 C CNN
-	1    7600 1800
+P 7600 1500
+F 0 "#PWR043" H 7600 1250 50  0001 C CNN
+F 1 "GND" H 7605 1327 50  0001 C CNN
+F 2 "" H 7600 1500 50  0001 C CNN
+F 3 "" H 7600 1500 50  0001 C CNN
+	1    7600 1500
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -363,29 +350,9 @@ Connection ~ 7900 1500
 Wire Wire Line
 	7900 1500 7900 1550
 Wire Wire Line
-	7500 1950 7600 1950
-Wire Wire Line
 	7650 1500 7600 1500
 Wire Wire Line
-	7600 1500 7600 1750
-Wire Wire Line
-	7700 1750 7600 1750
-Connection ~ 7600 1750
-Wire Wire Line
-	7600 1750 7600 1800
-Wire Wire Line
 	7900 1350 7900 1500
-$Comp
-L Device:R_Small R20
-U 1 1 5F89FD3A
-P 8000 2350
-F 0 "R20" V 8100 2350 50  0000 C BNN
-F 1 "10k" V 8000 2350 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8000 2350 50  0001 C CNN
-F 3 "~" H 8000 2350 50  0001 C CNN
-	1    8000 2350
-	0    1    1    0   
-$EndComp
 NoConn ~ 8000 2150
 NoConn ~ 8100 2150
 $Comp
@@ -399,17 +366,6 @@ F 3 "" H 7900 2150 50  0001 C CNN
 	1    7900 2150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	7600 1950 7600 2350
-Wire Wire Line
-	7600 2350 7900 2350
-Connection ~ 7600 1950
-Wire Wire Line
-	7600 1950 7700 1950
-Wire Wire Line
-	8100 2350 8400 2350
-Wire Wire Line
-	8400 2350 8400 1850
 Wire Wire Line
 	8400 1850 8300 1850
 $Comp
@@ -467,17 +423,6 @@ Wire Wire Line
 	8700 1850 8850 1850
 Wire Wire Line
 	9150 1850 9050 1850
-$Comp
-L Device:C_Small C15
-U 1 1 5F9CF383
-P 7200 1950
-F 0 "C15" V 6971 1950 50  0000 C CNN
-F 1 "0.1uF" V 7062 1950 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7200 1950 50  0001 C CNN
-F 3 "~" H 7200 1950 50  0001 C CNN
-	1    7200 1950
-	0    1    1    0   
-$EndComp
 Text Notes 9200 1250 0    40   ~ 0
 2x Buffered 10MHz Outputs
 Text Notes 6750 4850 0    40   ~ 0
@@ -2347,4 +2292,25 @@ Wire Wire Line
 Connection ~ 2500 1950
 Wire Wire Line
 	2500 1950 2500 2100
+Text GLabel 7500 1750 0    50   Input ~ 0
+10MHz
+Wire Wire Line
+	7600 1950 7700 1950
+Wire Wire Line
+	7600 1950 7600 2350
+Wire Wire Line
+	7600 2350 8400 2350
+Wire Wire Line
+	8400 2350 8400 1850
+$Comp
+L Device:R_Small R?
+U 1 1 618E603F
+P 7600 1750
+F 0 "R?" V 7700 1750 50  0000 C BNN
+F 1 "50R" V 7600 1750 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7600 1750 50  0001 C CNN
+F 3 "~" H 7600 1750 50  0001 C CNN
+	1    7600 1750
+	0    1    -1   0   
+$EndComp
 $EndSCHEMATC
