@@ -1,8 +1,8 @@
 Pin Changes for rev B
 
-PD6 - New 5MHz Input
-PD4 - New PPS Input
+PD6 (26) - New 5MHz Input
+PD4 (25) - New PPS Input
 
-PC6 - New POWER_OK LED
-PB4 - New GPS_LOCK LED
-PD1 - New OVEN_TEMP LED
+PC6 (31) - New POWER_OK LED
+PB4 (28) - New GPS_LOCK LED
+PD1 (19) - New OVEN_TEMP LED
