@@ -40,7 +40,7 @@
 #define LED_TIME    13
 #define LED_GLOCK   8
 
-#define ADC_VREF    1111.0  // ADC internal reference voltage, in mV
+#define ADC_VREF    1414.0  // ADC internal reference voltage, in mV
 
 /***********************************************************************************************
  *  Lars Globals
@@ -1291,7 +1291,7 @@ void setup()
   tempADC2_Filtered = tempRef * 100;
 
 // Set analog ref to about 1.1 Volt  
-  //analogReference(INTERNAL);
+  analogReference(EXTERNAL);
   TIC_Value = analogRead(A0);// just a dummy read
   
 
