@@ -5,8 +5,8 @@ $Descr USLetter 11000 8500
 encoding utf-8
 Sheet 1 1
 Title "Simple GPSDO"
-Date "2021-10-23"
-Rev "D"
+Date "2021-11-04"
+Rev "E"
 Comp "W3AXL"
 Comment1 ""
 Comment2 ""
@@ -72,11 +72,6 @@ F 3 "~" H 2700 2600 50  0001 C CNN
 	1    2700 2600
 	0    1    1    0   
 $EndComp
-NoConn ~ 3400 1200
-Wire Wire Line
-	2800 2100 2800 1150
-Wire Wire Line
-	2800 1150 3500 1150
 Connection ~ 3500 1150
 $Comp
 L Switch:SW_Push SW1
@@ -103,22 +98,16 @@ $EndComp
 $Comp
 L Device:R_Small R3
 U 1 1 5F6CE40C
-P 2650 1300
-F 0 "R3" V 2750 1300 50  0000 C BNN
-F 1 "10k" V 2650 1300 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2650 1300 50  0001 C CNN
-F 3 "~" H 2650 1300 50  0001 C CNN
-	1    2650 1300
+P 2800 1300
+F 0 "R3" V 2900 1300 50  0000 C BNN
+F 1 "10k" V 2800 1300 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2800 1300 50  0001 C CNN
+F 3 "~" H 2800 1300 50  0001 C CNN
+	1    2800 1300
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	2650 1400 2650 1500
-Connection ~ 2650 1500
-Wire Wire Line
-	2650 1200 2650 1150
-Wire Wire Line
-	2650 1150 2800 1150
-Connection ~ 2800 1150
+	2800 1400 2800 1500
 $Comp
 L Device:C_Small C4
 U 1 1 5F6EFBE0
@@ -183,7 +172,7 @@ F 3 "" H 1700 5950 50  0001 C CNN
 	1    1700 5950
 	1    0    0    -1  
 $EndComp
-Text GLabel 2500 1450 1    40   Input ~ 0
+Text GLabel 2650 1450 1    40   Input ~ 0
 ~RST
 Text GLabel 4100 1800 2    50   Input ~ 0
 ISP_MISO
@@ -193,7 +182,7 @@ Text GLabel 4100 1600 2    50   Input ~ 0
 ISP_SCK
 Text GLabel 4300 4400 2    50   Input ~ 0
 ADC0
-Text GLabel 4100 1900 2    50   Input ~ 0
+Text GLabel 4100 3100 2    50   Input ~ 0
 GPS_PPS
 $Comp
 L Connector:TestPoint TP1
@@ -206,13 +195,13 @@ F 3 "~" H 9100 4450 50  0001 C CNN
 	1    8900 4450
 	1    0    0    -1  
 $EndComp
-Text GLabel 4100 2400 2    50   Input ~ 0
-5MHz
-Text GLabel 4100 3100 2    50   Input ~ 0
-POWER_OK
-Text GLabel 4100 3200 2    50   Input ~ 0
-OVEN_TEMP
 Text GLabel 4100 3300 2    50   Input ~ 0
+5MHz
+Text GLabel 4100 2400 2    50   Input ~ 0
+POWER_OK
+Text GLabel 4100 2800 2    50   Input ~ 0
+OVEN_TEMP
+Text GLabel 4100 1900 2    50   Input ~ 0
 GPS_LOCK
 Text GLabel 7100 1950 0    50   Input ~ 0
 10MHz
@@ -221,7 +210,6 @@ NoConn ~ 4100 3600
 NoConn ~ 4100 3700
 NoConn ~ 4100 3900
 NoConn ~ 4100 4000
-NoConn ~ 4100 2800
 NoConn ~ 4100 1500
 $Comp
 L Amplifier_Operational:AD8610 U7
@@ -644,16 +632,8 @@ PWM_D3
 Text Label 4200 2200 0    50   ~ 0
 PWM_D11
 NoConn ~ 4100 2000
-Text GLabel 4300 4100 2    50   Input ~ 0
-ADC3
-Text GLabel 4300 4300 2    50   Input ~ 0
-ADC1
-Wire Wire Line
-	4100 4300 4250 4300
 Wire Wire Line
 	4100 4400 4300 4400
-Wire Wire Line
-	4300 4100 4200 4100
 $Comp
 L Connector:TestPoint TP3
 U 1 1 5FDD7F43
@@ -676,20 +656,10 @@ F 3 "~" H 4400 3750 50  0001 C CNN
 	1    4200 3750
 	1    0    0    -1  
 $EndComp
-Connection ~ 4200 4100
 Wire Wire Line
 	4200 4100 4100 4100
 Wire Wire Line
 	4200 3750 4200 4100
-Wire Wire Line
-	4250 4300 4250 4000
-Wire Wire Line
-	4250 4000 4500 4000
-Wire Wire Line
-	4500 4000 4500 3750
-Connection ~ 4250 4300
-Wire Wire Line
-	4250 4300 4300 4300
 Wire Wire Line
 	8400 1350 8500 1350
 Wire Wire Line
@@ -828,9 +798,9 @@ F 3 " ~" H 525 5000 50  0001 C CNN
 	1    1800 5550
 	1    0    0    -1  
 $EndComp
-Text GLabel 2700 1700 0    50   Input ~ 0
+Text GLabel 2900 1700 0    50   Input ~ 0
 XTAL1
-Text GLabel 2700 1900 0    50   Input ~ 0
+Text GLabel 2900 1900 0    50   Input ~ 0
 XTAL2
 Wire Wire Line
 	2250 3900 2250 3850
@@ -1437,28 +1407,9 @@ $EndComp
 Wire Wire Line
 	2900 2800 2800 2800
 Wire Wire Line
-	2900 2100 2800 2100
-Wire Wire Line
 	2800 2500 2900 2500
 Wire Wire Line
 	2900 2600 2800 2600
-Wire Wire Line
-	2900 1700 2700 1700
-Wire Wire Line
-	2700 1900 2900 1900
-Wire Wire Line
-	2650 1500 2900 1500
-$Comp
-L simple-gpsdo-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U2
-U 1 1 5F60CD50
-P 3500 3000
-F 0 "U2" H 3600 1200 50  0000 L CNN
-F 1 "ATmega32U4-AU" H 3600 1100 50  0000 L CNN
-F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 3500 3000 50  0001 C CIN
-F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 3500 3000 50  0001 C CNN
-	1    3500 3000
-	1    0    0    -1  
-$EndComp
 Connection ~ 2000 4100
 Wire Wire Line
 	2000 4100 2000 4200
@@ -1563,12 +1514,7 @@ Wire Wire Line
 	1550 1450 1550 1500
 Connection ~ 1550 1500
 Wire Wire Line
-	2050 1500 2500 1500
-Wire Wire Line
-	2500 1450 2500 1500
-Connection ~ 2500 1500
-Wire Wire Line
-	2500 1500 2650 1500
+	2650 1450 2650 1500
 Wire Wire Line
 	2000 2500 2600 2500
 Wire Wire Line
@@ -2067,12 +2013,12 @@ $Comp
 L Device:Ferrite_Bead_Small FB3
 U 1 1 623A3FC5
 P 2200 2300
-F 0 "FB3" V 2437 2300 50  0000 C CNN
-F 1 "Ferrite" V 2346 2300 50  0000 C CNN
+F 0 "FB3" V 2350 2150 50  0000 C CNN
+F 1 "Ferrite" V 2250 2100 50  0000 C CNN
 F 2 "Fuse:Fuse_1206_3216Metric_Pad1.42x1.75mm_HandSolder" V 2130 2300 50  0001 C CNN
 F 3 "~" H 2200 2300 50  0001 C CNN
 	1    2200 2300
-	0    -1   -1   0   
+	0    -1   1    0   
 $EndComp
 Wire Wire Line
 	2100 2300 2000 2300
@@ -2286,4 +2232,119 @@ F 3 "~" H 5550 6900 50  0001 C CNN
 	0    -1   -1   0   
 $EndComp
 Connection ~ 5700 6650
+NoConn ~ 4100 3200
+$Comp
+L simple-gpsdo-rescue:ATmega32U4-AU-MCU_Microchip_ATmega U2
+U 1 1 5F60CD50
+P 3500 3000
+F 0 "U2" H 3600 1200 50  0000 L CNN
+F 1 "ATmega32U4-AU" H 3600 1100 50  0000 L CNN
+F 2 "Package_QFP:TQFP-44_10x10mm_P0.8mm" H 3500 3000 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7766-8-bit-AVR-ATmega16U4-32U4_Datasheet.pdf" H 3500 3000 50  0001 C CNN
+	1    3500 3000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3400 1200 3400 1150
+Connection ~ 3400 1150
+Wire Wire Line
+	3400 1150 3500 1150
+Wire Wire Line
+	2500 2100 2900 2100
+$Comp
+L Reference_Voltage:LM4040DBZ-2.5 U5
+U 1 1 61920BAC
+P 2050 1850
+F 0 "U5" H 2050 2066 50  0000 C CNN
+F 1 "LM4041QDIM3-1.2" H 2050 1975 50  0000 C CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2050 1650 50  0001 C CIN
+F 3 "http://www.ti.com/lit/ds/symlink/lm4040-n.pdf" H 2050 1850 50  0001 C CIN
+	1    2050 1850
+	1    0    0    -1  
+$EndComp
+Connection ~ 2800 1500
+Wire Wire Line
+	2800 1500 2900 1500
+Wire Wire Line
+	2800 1200 2800 1150
+Connection ~ 2800 1150
+Wire Wire Line
+	2800 1150 3400 1150
+Connection ~ 2650 1500
+Wire Wire Line
+	2650 1500 2800 1500
+Wire Wire Line
+	2050 1500 2650 1500
+$Comp
+L Device:R_Small R30
+U 1 1 6196FBBC
+P 2500 1700
+F 0 "R30" V 2600 1700 50  0000 C BNN
+F 1 "10k" V 2500 1700 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2500 1700 50  0001 C CNN
+F 3 "~" H 2500 1700 50  0001 C CNN
+	1    2500 1700
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2500 1800 2500 1850
+Wire Wire Line
+	1900 1850 1850 1850
+Wire Wire Line
+	2500 1150 2500 1600
+Wire Wire Line
+	2500 1150 2800 1150
+Connection ~ 2500 1850
+Wire Wire Line
+	2200 1850 2500 1850
+Wire Wire Line
+	4500 3750 4500 4300
+Wire Wire Line
+	4100 4300 4500 4300
+$Comp
+L Device:C_Small C16
+U 1 1 61A61801
+P 2300 1950
+F 0 "C16" V 2071 1950 50  0000 C CNN
+F 1 "0.1uF" V 2162 1950 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 2300 1950 50  0001 C CNN
+F 3 "~" H 2300 1950 50  0001 C CNN
+	1    2300 1950
+	0    -1   -1   0   
+$EndComp
+Wire Wire Line
+	2500 1850 2500 1950
+Wire Wire Line
+	1850 1850 1850 1900
+$Comp
+L power:GND #PWR036
+U 1 1 619B77AC
+P 1850 1900
+F 0 "#PWR036" H 1850 1650 50  0001 C CNN
+F 1 "GND" H 1855 1727 50  0001 C CNN
+F 2 "" H 1850 1900 50  0001 C CNN
+F 3 "" H 1850 1900 50  0001 C CNN
+	1    1850 1900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR039
+U 1 1 61AB7055
+P 2150 2000
+F 0 "#PWR039" H 2150 1750 50  0001 C CNN
+F 1 "GND" H 2155 1827 50  0001 C CNN
+F 2 "" H 2150 2000 50  0001 C CNN
+F 3 "" H 2150 2000 50  0001 C CNN
+	1    2150 2000
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2200 1950 2150 1950
+Wire Wire Line
+	2150 1950 2150 2000
+Wire Wire Line
+	2400 1950 2500 1950
+Connection ~ 2500 1950
+Wire Wire Line
+	2500 1950 2500 2100
 $EndSCHEMATC

@@ -31,6 +31,21 @@
 
 #include <EEPROM.h>
 
+/***********************************************************************************************
+ *  Defines
+ **********************************************************************************************/
+
+#define LED_PWR     5
+#define LED_OVEN    2
+#define LED_TIME    13
+#define LED_GLOCK   8
+
+#define ADC_VREF    1111.0  // ADC internal reference voltage, in mV
+
+/***********************************************************************************************
+ *  Lars Globals
+ **********************************************************************************************/
+
 int warmUpTime = 300; // 300 gives five minutes hold during eg OCXO or Rb warmup. Set to eg 3 for VCTCXO
 long dacValueOut = 32768; // 16bit PWM-DAC setvalue=startvalue Max 65535 (if nothing stored in the EEPROM)
 long dacValue; // this is also same as "DACvalueOld" Note: is "0-65535" * timeconst
@@ -88,7 +103,6 @@ int lockPPSlimit = 100; // if TIC filtered for PPS within +- this for lockPSfact
 int lockPPSfactor = 5;  // see above
 unsigned long lockPPScounter; // counter for PPSlocked
 boolean PPSlocked; //digital pin and prints 0 or 1
-const int ppsLockedLED = 12; // LED pin for pps locked, originally pin 13, on UNO suggest change to pin 7
 
 int i; // counter for 300secs before storing temp and dac readings average
 int j; // counter for stored 300sec readings
@@ -246,7 +260,7 @@ void calculation()
      }
  
  // turn on LED 13 if "locked"    
-  digitalWrite(ppsLockedLED,PPSlocked);
+  digitalWrite(LED_TIME,PPSlocked);
   
 //////
  
@@ -1124,7 +1138,7 @@ float temperature_to_C(int RawADC, int sensor)
   switch (sensor) {
 
     case 1: //LM35
-    TempC = RawADC * 1100.0 / 1024.0 *0.1;
+    TempC = RawADC * ADC_VREF / 1024.0 * 0.1;
     break;
     case 2: //10k NTC beta 3950 + 68k (15-60C)
     TempC = floatADC * floatADC  * 0.0002536 - floatADC  * 0.2158 + 88.48 - floatADC  * floatADC  * floatADC  * 0.0000001179;   
@@ -1142,7 +1156,7 @@ float temperature_to_C(int RawADC, int sensor)
     TempC = RawADC * 1070.0 / 1024.0 *0.1;
     break;
     case 9: //LM35 fahrenheit
-    TempC = RawADC * 1100.0 / 1024.0 *0.1;
+    TempC = RawADC * ADC_VREF / 1024.0 *0.1;
     TempC = TempC * 1.8 + 32; 
     break;
     default:
@@ -1153,20 +1167,20 @@ float temperature_to_C(int RawADC, int sensor)
 }
 
 void flashLEDtwice() {
-  digitalWrite(ppsLockedLED,false); // flash the LED twice
+  digitalWrite(LED_TIME,false); // flash the LED twice
   delay(100);
-  digitalWrite(ppsLockedLED,true);
+  digitalWrite(LED_TIME,true);
   delay(100);
-  digitalWrite(ppsLockedLED,false);
+  digitalWrite(LED_TIME,false);
   delay(100);
-  digitalWrite(ppsLockedLED,true);
+  digitalWrite(LED_TIME,true);
   delay(100);
-  digitalWrite(ppsLockedLED,false);
+  digitalWrite(LED_TIME,false);
 } 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////
 void setup() 
 {
-  pinMode(ppsLockedLED,OUTPUT);
+  pinMode(LED_TIME,OUTPUT);
   flashLEDtwice();
   
   Serial.begin(9600);
@@ -1277,7 +1291,7 @@ void setup()
   tempADC2_Filtered = tempRef * 100;
 
 // Set analog ref to about 1.1 Volt  
-  analogReference(INTERNAL);
+  //analogReference(INTERNAL);
   TIC_Value = analogRead(A0);// just a dummy read
   
 
@@ -1316,7 +1330,7 @@ void loop()
     delay(100); // delay 100 milliseconds to give the PPS locked LED some time on if turned off in next step
     if ((dacValueOut < 3000 || dacValueOut > 62535) && opMode == run)
      { 
-      digitalWrite(ppsLockedLED,false); // turn off (flash)LED 13 if DAC near limits  
+      digitalWrite(LED_TIME,false); // turn off (flash)LED 13 if DAC near limits  
      }
     PPS_ReadFlag = false;    
   }
