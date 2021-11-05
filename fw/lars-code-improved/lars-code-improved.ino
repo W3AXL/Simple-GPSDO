@@ -46,6 +46,19 @@
 #define ADC_VREF    1414.0 // ADC internal reference voltage, in mV
 
 /***********************************************************************************************
+ *  Status Globals
+ **********************************************************************************************/
+
+#define LED_FLASH_TIME  1000
+
+boolean gpsFix = false;
+
+boolean ledGpsStatus = false;
+boolean ledTimeStatus = false;
+
+unsigned long ledTime = 0;
+
+/***********************************************************************************************
  *  Lars Globals
  **********************************************************************************************/
 
@@ -1541,15 +1554,47 @@ void setDAC(long value)
 }
 
 /**
- * Updates status LEDs based on current globals
+ * Updates and/or flashes status LEDs based on current globals
  */
-void updateStatus()
+void updateLEDs()
 {
-    if (PPSlocked) {
-        digitalWrite(LED_TIME, HIGH);
-    } else {
-        digitalWrite(LED_FAULT, HIGH);
+    // Status flag if we have any faults
+    boolean fault = false;
+
+    // Check status variables and throw fault flag if we do
+    if (!gpsFix) 
+    {
+        fault = true;
     }
+    else
+    {
+        digitalWrite(LED_GPFIX, HIGH);
+    }
+    if (!PPSlocked) 
+    {
+        fault = true;
+    }
+    else 
+    {
+        digitalWrite(LED_TIME, HIGH);
+    }
+
+    // Light fault LED if needed
+    digitalWrite(LED_FAULT, fault);
+    // non-blocking LED flasher
+    if (millis() - ledTime > LED_FLASH_TIME && fault) {
+        ledTime = millis();
+        if (!gpsFix)
+        {
+            ledGpsStatus = !ledGpsStatus;
+        }
+        if (!PPSlocked)
+        {
+            ledTimeStatus = !ledTimeStatus;
+        }
+    }
+    digitalWrite(LED_GPFIX, ledGpsStatus);
+    digitalWrite(LED_TIME, ledTimeStatus);
 }
 
 /***********************************************************************************************
@@ -1614,16 +1659,25 @@ void setup()
 
 void loop()
 {
+    // Update status LEDs
+    updateLEDs();
+
     // note the GPSDO does not accept any command before the GPS module generates 1PPS (gets position lock, which requires 3 to 4 satellites in view)
     if (PPS_ReadFlag == true) // set by capture of PPS on D8
     {
+        // We have a GPS fix if we've got PPS
+        if (!gpsFix) {gpsFix = true;}
+        // Run the calculation routine
         calculation();
+        // Get serial commands
         getCommand();
+        // Print serial data
         printDataToSerial();
-        delay(100); // delay 100 milliseconds to give the PPS locked LED some time on if turned off in next step
+
+        // Check if the DAC is at its extreme limits
         if ((dacValueOut < 3000 || dacValueOut > 62535) && opMode == run)
         {
-            digitalWrite(LED_TIME, false); // turn off (flash)LED 13 if DAC near limits
+            // digitalWrite(LED_TIME, false); // turn off (flash)LED 13 if DAC near limits
         }
         PPS_ReadFlag = false;
     }
@@ -1636,8 +1690,10 @@ void loop()
         overflowCount++;                                           // normally will increment every 10ms (50000x200ns) used for time since start(seconds)
         if (overflowCount > 31 && (overflowCount - 30) % 100 == 0) // sense if more than 1sec since last pps pulse
         {
+            // We lost GPS fix, probably
+            if (gpsFix) {gpsFix = false;}
+            // Print status
             Serial.println(F(" No PPS"));
-            flashLEDtwice(); // flash the LED twice if no PPS
             if (overflowCount > 2000)
                 newMode = run; // resets timer_us etc after 20s without PPS in calculation function
             if (overflowCount > 20000)
