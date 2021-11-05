@@ -49,7 +49,7 @@
  *  Status Globals
  **********************************************************************************************/
 
-#define LED_FLASH_TIME  1000
+#define LED_FLASH_TIME  750
 
 boolean gpsFix = false;
 
@@ -1581,6 +1581,7 @@ void updateLEDs()
 
     // Light fault LED if needed
     digitalWrite(LED_FAULT, fault);
+
     // non-blocking LED flasher
     if (millis() - ledTime > LED_FLASH_TIME && fault) {
         ledTime = millis();
@@ -1588,7 +1589,7 @@ void updateLEDs()
         {
             ledGpsStatus = !ledGpsStatus;
         }
-        if (!PPSlocked)
+        else if (!PPSlocked)
         {
             ledTimeStatus = !ledTimeStatus;
         }

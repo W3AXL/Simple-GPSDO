@@ -1,0 +1,42 @@
+Circuit: * H:\Documents\GitHub\Simple-GPSDO\sim\output-amplifier-sim.asc
+
+Direct Newton iteration for .op point succeeded.
+Heightened Def Con from 3.43968e-007 to 3.43968e-007
+Heightened Def Con from 6.44136e-007 to 6.44153e-007
+Heightened Def Con from 7.57296e-007 to 7.57671e-007
+Heightened Def Con from 1.15722e-006 to 1.15759e-006
+Heightened Def Con from 1.25753e-006 to 1.2578e-006
+Heightened Def Con from 1.44449e-006 to 1.44449e-006
+Heightened Def Con from 2.14495e-006 to 2.145e-006
+Heightened Def Con from 2.55736e-006 to 2.55741e-006
+Heightened Def Con from 3.55701e-006 to 3.55702e-006
+Heightened Def Con from 3.75699e-006 to 3.75726e-006
+Heightened Def Con from 3.84567e-006 to 3.84572e-006
+Heightened Def Con from 3.957e-006 to 3.957e-006
+Heightened Def Con from 4.05699e-006 to 4.05699e-006
+Heightened Def Con from 5.34627e-006 to 5.3464e-006
+Heightened Def Con from 5.94648e-006 to 5.94648e-006
+Heightened Def Con from 6.94702e-006 to 6.94702e-006
+Heightened Def Con from 7.3472e-006 to 7.34725e-006
+Heightened Def Con from 7.54686e-006 to 7.54686e-006
+Heightened Def Con from 8.64728e-006 to 8.6473e-006
+Heightened Def Con from 1.00476e-005 +to 1.00477e-005
+Heightened Def Con from 1.39487e-005 to 1.39487e-005
+
+Date: Fri Nov 05 09:55:45 2021
+Total elapsed time: 2.704 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 315171
+traniter = 315166
+tranpoints = 122687
+accept = 93472
+rejected = 29237
+matrix size = 124
+fillins = 145
+solver = Normal
+Matrix Compiler1: 13.89 KB object code size  2.5/1.5/[0.8]
+Matrix Compiler2: 12.54 KB object code size  0.9/1.2/[0.5]
+
