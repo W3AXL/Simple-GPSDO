@@ -1,0 +1,15 @@
+* H:\Documents\GitHub\Simple-GPSDO\sim\output-amplifier-sim.asc
+V1 N001 0 5V
+V2 N003 0 PULSE(0.5 4.5 0 6n 6n 50n 100n)
+C1 N004 0 750p
+L2 N004 N002 470n
+C2 OUT1 N002 0.1µ
+R2 OUT1 0 50
+XU1 N003 N004 N001 0 N004 TLV354
+C3 N002 0 430p
+C4 OUT2 N002 0.1µ
+R1 OUT2 0 50
+.tran 0 101u 100u
+.lib H:\Downloads\sboma83a\TLV354.LIB
+.backanno
+.end

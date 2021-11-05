@@ -212,12 +212,12 @@ NoConn ~ 4100 1500
 $Comp
 L Amplifier_Operational:AD8610 U7
 U 1 1 5F779082
-P 8000 1850
-F 0 "U7" H 8000 2150 50  0000 L CNN
-F 1 "TLV3541IDR" H 8000 2050 50  0000 L CNN
-F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 8050 1900 50  0001 C CNN
-F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8610_8620.pdf" H 8150 2000 50  0001 C CNN
-	1    8000 1850
+P 7350 1850
+F 0 "U7" H 7350 2150 50  0000 L CNN
+F 1 "TLV3541IDR" H 7350 2050 50  0000 L CNN
+F 2 "Package_SO:SOIC-8_3.9x4.9mm_P1.27mm" H 7400 1900 50  0001 C CNN
+F 3 "https://www.analog.com/media/en/technical-documentation/data-sheets/AD8610_8620.pdf" H 7500 2000 50  0001 C CNN
+	1    7350 1850
 	1    0    0    -1  
 $EndComp
 Text GLabel 6000 1250 0    50   Input ~ 0
@@ -325,49 +325,47 @@ $EndComp
 $Comp
 L power:GND #PWR043
 U 1 1 5F857189
-P 7600 1500
-F 0 "#PWR043" H 7600 1250 50  0001 C CNN
-F 1 "GND" H 7605 1327 50  0001 C CNN
-F 2 "" H 7600 1500 50  0001 C CNN
-F 3 "" H 7600 1500 50  0001 C CNN
-	1    7600 1500
+P 6950 1500
+F 0 "#PWR043" H 6950 1250 50  0001 C CNN
+F 1 "GND" H 6955 1327 50  0001 C CNN
+F 2 "" H 6950 1500 50  0001 C CNN
+F 3 "" H 6950 1500 50  0001 C CNN
+	1    6950 1500
 	1    0    0    -1  
 $EndComp
 $Comp
 L Device:C_Small C17
 U 1 1 5F87C209
-P 7750 1500
-F 0 "C17" V 7521 1500 50  0000 C CNN
-F 1 "0.1uF" V 7612 1500 50  0000 C CNN
-F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7750 1500 50  0001 C CNN
-F 3 "~" H 7750 1500 50  0001 C CNN
-	1    7750 1500
+P 7100 1500
+F 0 "C17" V 6871 1500 50  0000 C CNN
+F 1 "0.1uF" V 6962 1500 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7100 1500 50  0001 C CNN
+F 3 "~" H 7100 1500 50  0001 C CNN
+	1    7100 1500
 	0    -1   1    0   
 $EndComp
 Wire Wire Line
-	7850 1500 7900 1500
-Connection ~ 7900 1500
+	7200 1500 7250 1500
+Connection ~ 7250 1500
 Wire Wire Line
-	7900 1500 7900 1550
+	7250 1500 7250 1550
 Wire Wire Line
-	7650 1500 7600 1500
+	7000 1500 6950 1500
 Wire Wire Line
-	7900 1350 7900 1500
-NoConn ~ 8000 2150
-NoConn ~ 8100 2150
+	7250 1350 7250 1500
+NoConn ~ 7350 2150
+NoConn ~ 7450 2150
 $Comp
 L power:GND #PWR047
 U 1 1 5F8AD7B0
-P 7900 2150
-F 0 "#PWR047" H 7900 1900 50  0001 C CNN
-F 1 "GND" H 7905 1977 50  0001 C CNN
-F 2 "" H 7900 2150 50  0001 C CNN
-F 3 "" H 7900 2150 50  0001 C CNN
-	1    7900 2150
+P 7250 2150
+F 0 "#PWR047" H 7250 1900 50  0001 C CNN
+F 1 "GND" H 7255 1977 50  0001 C CNN
+F 2 "" H 7250 2150 50  0001 C CNN
+F 3 "" H 7250 2150 50  0001 C CNN
+	1    7250 2150
 	1    0    0    -1  
 $EndComp
-Wire Wire Line
-	8400 1850 8300 1850
 $Comp
 L Device:C_Small C21
 U 1 1 5F8BD310
@@ -390,7 +388,6 @@ F 3 "~" H 8600 1350 50  0001 C CNN
 	1    8600 1350
 	0    1    1    0   
 $EndComp
-Connection ~ 8400 1850
 Wire Wire Line
 	8400 1350 8400 1850
 $Comp
@@ -424,7 +421,7 @@ Wire Wire Line
 Wire Wire Line
 	9150 1850 9050 1850
 Text Notes 9200 1250 0    40   ~ 0
-2x Buffered 10MHz Outputs
+2x Buffered 10MHz Outputs\napprox. 11 dBm sinewave
 Text Notes 6750 4850 0    40   ~ 0
 100Ω resistors on all digital lines\nto keep the noise down
 $Comp
@@ -1231,12 +1228,12 @@ $EndComp
 $Comp
 L power:+5V #PWR021
 U 1 1 619B5C48
-P 7900 1350
-F 0 "#PWR021" H 7900 1200 50  0001 C CNN
-F 1 "+5V" H 7915 1523 50  0000 C CNN
-F 2 "" H 7900 1350 50  0001 C CNN
-F 3 "" H 7900 1350 50  0001 C CNN
-	1    7900 1350
+P 7250 1350
+F 0 "#PWR021" H 7250 1200 50  0001 C CNN
+F 1 "+5V" H 7265 1523 50  0000 C CNN
+F 2 "" H 7250 1350 50  0001 C CNN
+F 3 "" H 7250 1350 50  0001 C CNN
+	1    7250 1350
 	1    0    0    -1  
 $EndComp
 $Comp
@@ -2292,25 +2289,98 @@ Wire Wire Line
 Connection ~ 2500 1950
 Wire Wire Line
 	2500 1950 2500 2100
-Text GLabel 7500 1750 0    50   Input ~ 0
+Text GLabel 6850 1750 0    50   Input ~ 0
 10MHz
-Wire Wire Line
-	7600 1950 7700 1950
-Wire Wire Line
-	7600 1950 7600 2350
-Wire Wire Line
-	7600 2350 8400 2350
-Wire Wire Line
-	8400 2350 8400 1850
 $Comp
-L Device:R_Small R?
+L Device:R_Small R18
 U 1 1 618E603F
-P 7600 1750
-F 0 "R?" V 7700 1750 50  0000 C BNN
-F 1 "50R" V 7600 1750 40  0000 C CNN
-F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7600 1750 50  0001 C CNN
-F 3 "~" H 7600 1750 50  0001 C CNN
-	1    7600 1750
+P 6950 1750
+F 0 "R18" V 7050 1750 50  0000 C BNN
+F 1 "50R" V 6950 1750 40  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 6950 1750 50  0001 C CNN
+F 3 "~" H 6950 1750 50  0001 C CNN
+	1    6950 1750
 	0    1    -1   0   
 $EndComp
+Wire Wire Line
+	7650 1850 7700 1850
+Wire Wire Line
+	7700 1850 7700 2300
+Wire Wire Line
+	7700 2300 7000 2300
+Wire Wire Line
+	7000 2300 7000 1950
+Wire Wire Line
+	7000 1950 7050 1950
+$Comp
+L Device:C_Small C15
+U 1 1 618C0510
+P 7850 2050
+F 0 "C15" V 7621 2050 50  0000 C CNN
+F 1 "750pF" V 7712 2050 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7850 2050 50  0001 C CNN
+F 3 "~" H 7850 2050 50  0001 C CNN
+	1    7850 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L Device:C_Small C18
+U 1 1 618C1226
+P 8250 2050
+F 0 "C18" V 8021 2050 50  0000 C CNN
+F 1 "430pF" V 8112 2050 50  0000 C CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 8250 2050 50  0001 C CNN
+F 3 "~" H 8250 2050 50  0001 C CNN
+	1    8250 2050
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR042
+U 1 1 618C1B7E
+P 8250 2150
+F 0 "#PWR042" H 8250 1900 50  0001 C CNN
+F 1 "GND" H 8255 1977 50  0001 C CNN
+F 2 "" H 8250 2150 50  0001 C CNN
+F 3 "" H 8250 2150 50  0001 C CNN
+	1    8250 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR040
+U 1 1 618C21E8
+P 7850 2150
+F 0 "#PWR040" H 7850 1900 50  0001 C CNN
+F 1 "GND" H 7855 1977 50  0001 C CNN
+F 2 "" H 7850 2150 50  0001 C CNN
+F 3 "" H 7850 2150 50  0001 C CNN
+	1    7850 2150
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:L_Small L4
+U 1 1 618C4152
+P 8050 1850
+F 0 "L4" H 8098 1896 50  0000 L CNN
+F 1 "470nH" H 8098 1805 50  0000 L CNN
+F 2 "Inductor_SMD:L_1206_3216Metric_Pad1.42x1.75mm_HandSolder" H 8050 1850 50  0001 C CNN
+F 3 "~" H 8050 1850 50  0001 C CNN
+	1    8050 1850
+	0    1    -1   0   
+$EndComp
+Wire Wire Line
+	8150 1850 8250 1850
+Connection ~ 8400 1850
+Wire Wire Line
+	8250 1950 8250 1850
+Connection ~ 8250 1850
+Wire Wire Line
+	8250 1850 8400 1850
+Wire Wire Line
+	7850 1950 7850 1850
+Wire Wire Line
+	7850 1850 7700 1850
+Connection ~ 7700 1850
+Wire Wire Line
+	7850 1850 7950 1850
+Connection ~ 7850 1850
 $EndSCHEMATC
