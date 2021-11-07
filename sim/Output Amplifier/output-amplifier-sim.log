@@ -1,42 +1,79 @@
-Circuit: * H:\Documents\GitHub\Simple-GPSDO\sim\output-amplifier-sim.asc
+Circuit: * H:\Documents\GitHub\Simple-GPSDO\sim\Output Amplifier\output-amplifier-sim.asc
 
-Direct Newton iteration for .op point succeeded.
-Heightened Def Con from 3.43968e-007 to 3.43968e-007
-Heightened Def Con from 6.44136e-007 to 6.44153e-007
-Heightened Def Con from 7.57296e-007 to 7.57671e-007
-Heightened Def Con from 1.15722e-006 to 1.15759e-006
-Heightened Def Con from 1.25753e-006 to 1.2578e-006
-Heightened Def Con from 1.44449e-006 to 1.44449e-006
-Heightened Def Con from 2.14495e-006 to 2.145e-006
-Heightened Def Con from 2.55736e-006 to 2.55741e-006
-Heightened Def Con from 3.55701e-006 to 3.55702e-006
-Heightened Def Con from 3.75699e-006 to 3.75726e-006
-Heightened Def Con from 3.84567e-006 to 3.84572e-006
-Heightened Def Con from 3.957e-006 to 3.957e-006
-Heightened Def Con from 4.05699e-006 to 4.05699e-006
-Heightened Def Con from 5.34627e-006 to 5.3464e-006
-Heightened Def Con from 5.94648e-006 to 5.94648e-006
-Heightened Def Con from 6.94702e-006 to 6.94702e-006
-Heightened Def Con from 7.3472e-006 to 7.34725e-006
-Heightened Def Con from 7.54686e-006 to 7.54686e-006
-Heightened Def Con from 8.64728e-006 to 8.6473e-006
-Heightened Def Con from 1.00476e-005 +to 1.00477e-005
-Heightened Def Con from 1.39487e-005 to 1.39487e-005
+Direct Newton iteration failed to find .op point.  (Use ".option noopiter" to skip.)
+Starting Gmin stepping
+Gmin = 10
+Gmin = 1.07374
+Gmin = 0.115292
+Gmin = 0.0123794
+vernier = 0.5
+Gmin = 0.00207692
+vernier = 0.25
+vernier = 0.125
+vernier = 0.0625
+vernier = 0.03125
+Gmin = 0.00181775
+vernier = 0.015625
+vernier = 0.0078125
+Gmin = 0.0017931
+vernier = 0.0104167
+vernier = 0.0138889
+Gmin = 0.00174102
+vernier = 0.0185185
+vernier = 0.0246913
+Gmin = 0.00166117
+vernier = 0.0329218
+Gmin = 0.00154299
+vernier = 0.0438957
+vernier = 0.0585276
+Gmin = 0.00136361
+vernier = 0.0780367
+vernier = 0.104049
+Gmin = 0.00112052
+vernier = 0.138732
+Gmin = 0.000824076
+vernier = 0.184976
+vernier = 0.246634
+Gmin = 0.000494573
+vernier = 0.328846
+vernier = 0.438461
+Gmin = 0.000221842
+vernier = 0.584614
+Gmin = 6.455e-005
+vernier = 0.779486
+vernier = 1
+Gmin = 9.08509e-006
+Gmin = 9.75504e-007
+Gmin = 1.04744e-007
+Gmin = 1.12468e-008
+Gmin = 1.20762e-009
+Gmin = 1.29667e-010
+Gmin = 1.39229e-011
+Gmin = 1.49496e-012
+Gmin = 1.6052e-013
+Gmin = 0
+Gmin stepping succeeded in finding the operating point.
 
-Date: Fri Nov 05 09:55:45 2021
-Total elapsed time: 2.704 seconds.
+Heightened Def Con from 1.57375e-007 to 1.57641e-007
+Heightened Def Con from 3.5728e-007 to 3.57282e-007
+Heightened Def Con from 6.49123e-007 to 6.49125e-007
+Heightened Def Con from 7.50733e-007 +++++++++++++++++++++++++++++to 7.52858e-007
+
+Date: Sat Nov 06 19:36:41 2021
+Total elapsed time: 2.140 seconds.
 
 tnom = 27
 temp = 27
 method = modified trap
-totiter = 315171
-traniter = 315166
-tranpoints = 122687
-accept = 93472
-rejected = 29237
+totiter = 226565
+traniter = 225231
+tranpoints = 92966
+accept = 72819
+rejected = 20180
 matrix size = 124
-fillins = 145
+fillins = 211
 solver = Normal
-Matrix Compiler1: 13.89 KB object code size  2.5/1.5/[0.8]
-Matrix Compiler2: 12.54 KB object code size  0.9/1.2/[0.5]
+Thread vector: 4.6/3.6[3] 3.2/2.5[3] 2.4/2.1[2] 0.4/3.2[1]  2592/500
+Matrix Compiler1: 18.46 KB object code size  3.0/1.3/[0.8]
+Matrix Compiler2: 13.74 KB object code size  1.3/1.5/[0.6]
 
