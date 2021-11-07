@@ -5,4 +5,5 @@
   (lib (name molex)(type KiCad)(uri ${KIPRJMOD}/molex.pretty)(options "")(descr ""))
   (lib (name Kycon)(type KiCad)(uri ${KIPRJMOD}/Kycon.pretty)(options "")(descr ""))
   (lib (name w3axl-logos)(type KiCad)(uri ${KIPRJMOD}/w3axl-logos.pretty)(options "")(descr ""))
+  (lib (name LED_THT_CUSTOM)(type KiCad)(uri ${KIPRJMOD}/LED_THT_CUSTOM.pretty)(options "")(descr ""))
 )
