@@ -43,7 +43,10 @@
 #define DAC_HIGH    3       // High PWM-DAC pin (connected to 39k)
 #define DAC_LOW     11      // Low PWM-DAC pin (connected to 10M)
 
-#define ADC_VREF    1414.0 // ADC internal reference voltage, in mV
+#define ADC_VREF    1414.0  // ADC internal reference voltage, in mV
+
+#define USB_BAUD    9600  
+#define UBLOX_BAUD  9600
 
 /***********************************************************************************************
  *  Status Globals
@@ -57,6 +60,12 @@ boolean ledGpsStatus = false;
 boolean ledTimeStatus = false;
 
 unsigned long ledTime = 0;
+
+float lastHDOP = 0;
+int lastSats = 0;
+
+char nmeaBuffer[100] = {};  // Buffer for NMEA serial messages.
+char nmeaLoc = 0;           // Counter for nmea buffer location
 
 /***********************************************************************************************
  *  Lars Globals
@@ -1271,6 +1280,14 @@ void printDataToSerial()
         }
 
     } // end of If (lessInfoDisplayed)
+
+    // Print GPS data
+    Serial.print(lastSats);
+    Serial.print("\t");
+    Serial.print(lastHDOP);
+    Serial.print("\t");
+
+    // End of line
     Serial.println("");
 }
 
@@ -1320,7 +1337,11 @@ void printHeader3_ToSerial()
     Serial.print("\t");
     Serial.print(F("timer1"));
     Serial.print("\t");
-    Serial.println(F("temp1"));
+    Serial.print(F("temp1"));
+    Serial.print("\t");
+    Serial.print(F("sats"));
+    Serial.print("\t");
+    Serial.println(F("hdop"));
 }
 
 /**
@@ -1598,6 +1619,65 @@ void updateLEDs()
     digitalWrite(LED_TIME, ledTimeStatus);
 }
 
+/**
+ * Handles serial data coming in from the UBlox module
+ */
+void receiveNMEA()
+{
+    while (Serial1.available() > 0)
+    {
+        // Read a character and add it to the buffer
+        char rx = Serial1.read();
+        nmeaBuffer[nmeaLoc] = rx;
+        nmeaLoc++;
+
+        // If we got a newline, process the message and clear the buffer
+        if (rx == '\n')
+        {
+            processNMEA(nmeaBuffer);    // parse the message
+            memset(nmeaBuffer, 0, sizeof(nmeaBuffer));  // clear nmea buffer
+            nmeaLoc = 0;    // reset buffer counter
+        }
+
+        // Rollover the buffer
+        if (nmeaLoc > 99) {
+            nmeaLoc = 0;
+        }
+    }
+}
+
+/**
+ * Processes a serial message from the UBlox data line
+ * 
+ * \param msg The message string to process
+ */
+void processNMEA(char msg[])
+{
+    // GPGGA Message
+    if (strncmp(msg, "$GPGGA,", 7) == 0)
+    {
+        // Split out each comma-separated value and track index
+        char* next = strtok(msg, ",");
+        char idx = 0;
+        while (next != NULL)
+        {
+            // Number of sats is at index 7
+            if (idx == 7)
+            {
+                lastSats = int(atoi(next));
+            }
+            // HDOP is at index 8
+            if (idx == 8)
+            {
+                lastHDOP = (float)atof(next);
+            }
+            // Get next item and increase index
+            next = strtok(NULL, ",");
+            idx++;
+        }
+    }
+}
+
 /***********************************************************************************************
  *  Main Arduino Runtime Functions
  **********************************************************************************************/
@@ -1613,8 +1693,11 @@ void setup()
     // Power LED
     digitalWrite(LED_PWR, HIGH);
 
-    // Start serial
-    Serial.begin(9600);
+    // Start USB serial
+    Serial.begin(USB_BAUD);
+
+    // Start GPS serial
+    Serial1.begin(UBLOX_BAUD);
 
     // Print info and header in beginning
     printHeader1_ToSerial();
@@ -1660,9 +1743,6 @@ void setup()
 
 void loop()
 {
-    // Update status LEDs
-    updateLEDs();
-
     // note the GPSDO does not accept any command before the GPS module generates 1PPS (gets position lock, which requires 3 to 4 satellites in view)
     if (PPS_ReadFlag == true) // set by capture of PPS on D8
     {
@@ -1706,4 +1786,10 @@ void loop()
             }
         }
     }
+
+    // Get data from U-Blox
+    receiveNMEA();
+
+    // Update status LEDs
+    updateLEDs();
 }
