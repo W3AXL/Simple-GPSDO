@@ -46,20 +46,22 @@
 #define ADC_VREF    1414.0  // ADC internal reference voltage, in mV
 
 #define USB_BAUD    9600  
-#define UBLOX_BAUD  9600
+#define UBLOX_BAUD  115200
 
 /***********************************************************************************************
- *  Status Globals
+ *  W3AXL Globals
  **********************************************************************************************/
 
 #define LED_FLASH_TIME  750
 
 boolean gpsFix = false;
 
+boolean ledFaultStatus = false;
 boolean ledGpsStatus = false;
 boolean ledTimeStatus = false;
 
 unsigned long ledTime = 0;
+unsigned long faultMsgTime = 0;
 
 float lastHDOP = 0;
 int lastSats = 0;
@@ -550,7 +552,6 @@ void getCommand()
         T = 'T', // time const (followed by new value)
         w = 'w',
         W = 'W', // set warmup time (to allow for warm up of oscillator)
-
     };
 
     if (Serial.available() > 0)
@@ -1017,7 +1018,6 @@ void getCommand()
                 EEPROM.write(1020, lowByte(gain));
                 EEPROM.write(1021, highByte(timeConst));
                 EEPROM.write(1022, lowByte(timeConst));
-                Serial.println("");
                 break;
 
             case 2:
@@ -1582,41 +1582,64 @@ void updateLEDs()
     // Status flag if we have any faults
     boolean fault = false;
 
-    // Check status variables and throw fault flag if we do
-    if (!gpsFix) 
+    // Keep the fault LED solid and the status LEDs off during warmup
+    if (time < warmUpTime)
+    {
+        digitalWrite(LED_FAULT, HIGH);
+        digitalWrite(LED_GPFIX, LOW);
+        digitalWrite(LED_TIME, LOW);
+        return;
+    }
+
+    // Check status variables and throw fault flag if we do (but ignore during warmup)
+    if (!gpsFix || !PPSlocked) 
     {
         fault = true;
     }
-    else
+
+    // Check individual statuses
+    if (gpsFix)
     {
         digitalWrite(LED_GPFIX, HIGH);
     }
-    if (!PPSlocked) 
-    {
-        fault = true;
-    }
-    else 
+    if (PPSlocked) 
     {
         digitalWrite(LED_TIME, HIGH);
     }
 
-    // Light fault LED if needed
-    digitalWrite(LED_FAULT, fault);
-
     // non-blocking LED flasher
     if (millis() - ledTime > LED_FLASH_TIME && fault) {
         ledTime = millis();
+        // Always flash fault LED for a fault
+        ledFaultStatus = !ledFaultStatus;
+        digitalWrite(LED_FAULT, ledFaultStatus);
+        // Flash fix led
         if (!gpsFix)
         {
             ledGpsStatus = !ledGpsStatus;
+            digitalWrite(LED_GPFIX, ledGpsStatus);
+        }
+        // Flash PPS led, but only if we already have a fix
+        if (gpsFix && !PPSlocked)
+        {
+            ledTimeStatus = !ledTimeStatus;
+            digitalWrite(LED_TIME, ledTimeStatus);
+        }
+    }
+
+    // Print fault message every 5 seconds
+    if ((millis() - faultMsgTime > 5000) && fault) 
+    {
+        faultMsgTime = millis();
+        if (!gpsFix)
+        {
+            Serial.println("FAULT: GPS FIX. Missing PPS?");
         }
         else if (!PPSlocked)
         {
-            ledTimeStatus = !ledTimeStatus;
+            Serial.println("FAULT: Loop Not Locked");
         }
     }
-    digitalWrite(LED_GPFIX, ledGpsStatus);
-    digitalWrite(LED_TIME, ledTimeStatus);
 }
 
 /**
@@ -1656,6 +1679,7 @@ void processNMEA(char msg[])
     // GPGGA Message
     if (strncmp(msg, "$GPGGA,", 7) == 0)
     {
+        //Serial.println(msg);
         // Split out each comma-separated value and track index
         char* next = strtok(msg, ",");
         char idx = 0;
