@@ -290,7 +290,7 @@ void calculation()
 
 
     // turn on TIME SYNC led if "locked"
-    digitalWrite(LED_TIME, PPSlocked);
+    //digitalWrite(LED_TIME, PPSlocked);
 
     // read ADC1 and 2 - temperature
     int dummyreadADC = analogRead(A1); //without this ADC1 is influenced by ADC0
@@ -1639,6 +1639,13 @@ void updateLEDs()
         {
             Serial.println("FAULT: Loop Not Locked");
         }
+    }
+
+    // Turn off the fault LED if we don't have a fault
+    if (!fault && ledFaultStatus)
+    {
+        ledFaultStatus = false;
+        digitalWrite(LED_FAULT, LOW);
     }
 }
 
