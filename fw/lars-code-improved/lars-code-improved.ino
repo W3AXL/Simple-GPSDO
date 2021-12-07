@@ -65,6 +65,7 @@ unsigned long faultMsgTime = 0;
 
 float lastHDOP = 0;
 int lastSats = 0;
+char lastTime[10] = {};
 
 char nmeaBuffer[100] = {};  // Buffer for NMEA serial messages.
 char nmeaLoc = 0;           // Counter for nmea buffer location
@@ -1286,6 +1287,8 @@ void printDataToSerial()
     Serial.print("\t");
     Serial.print(lastHDOP);
     Serial.print("\t");
+    Serial.print(lastTime);
+    Serial.print("Z");
 
     // End of line
     Serial.println("");
@@ -1342,6 +1345,8 @@ void printHeader3_ToSerial()
     Serial.print(F("sats"));
     Serial.print("\t");
     Serial.println(F("hdop"));
+    Serial.println("\t");
+    Serial.println(F("utc"));
 }
 
 /**
@@ -1683,8 +1688,8 @@ void receiveNMEA()
  */
 void processNMEA(char msg[])
 {
-    // GPGGA Message
-    if (strncmp(msg, "$GPGGA,", 7) == 0)
+    // GPGGA Message (also check for NEO-M8 GNGGA message, same format)
+    if ( (strncmp(msg, "$GPGGA,", 7) == 0) || (strncmp(msg, "$GNGGA,", 7) == 0) )
     {
         //Serial.println(msg);
         // Split out each comma-separated value and track index
@@ -1692,6 +1697,11 @@ void processNMEA(char msg[])
         char idx = 0;
         while (next != NULL)
         {
+            // UTC time is at index 1
+            if (idx == 1)
+            {
+                strcpy(lastTime, next);
+            }
             // Number of sats is at index 7
             if (idx == 7)
             {
