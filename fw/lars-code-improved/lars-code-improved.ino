@@ -65,7 +65,8 @@ unsigned long faultMsgTime = 0;
 
 float lastHDOP = 0;
 int lastSats = 0;
-char lastTime[10] = {};
+char lastTime[9];   // format: hhmmss.ss
+char lastDate[6];   // format: mmddyy
 
 char nmeaBuffer[100] = {};  // Buffer for NMEA serial messages.
 char nmeaLoc = 0;           // Counter for nmea buffer location
@@ -1080,8 +1081,17 @@ void getCommand()
  */
 void printDataToSerial()
 {
+    // Print time since boot
     Serial.print((time), DEC);
     Serial.print("\t");
+
+    // Print GPS time
+    char timeString[17];
+    getDateTimeStr(timeString);
+    Serial.print(timeString);
+    Serial.print("\t");
+
+    // Print TIC
     if (TIC_Value == 1023)
     {
         Serial.print(F("Missing 10MHz?"));
@@ -1156,6 +1166,12 @@ void printDataToSerial()
         }
         Serial.print("\t");
 
+        // Print GPS data
+        Serial.print(lastSats);
+        Serial.print("\t");
+        Serial.print(lastHDOP);
+
+        // Optional extra serial data
         if (i == 1)
         {
             Serial.print(F("Five minute averages: TIC+DAC+temp"));
@@ -1240,7 +1256,7 @@ void printDataToSerial()
                 Serial.print(F("noLock"));
                 break;
             case 3:
-                Serial.print(F("Restarted"));
+                Serial.print(F("Restart"));
                 break;
             case 4:
                 Serial.print(F("Locked"));
@@ -1282,14 +1298,6 @@ void printDataToSerial()
 
     } // end of If (lessInfoDisplayed)
 
-    // Print GPS data
-    Serial.print(lastSats);
-    Serial.print("\t");
-    Serial.print(lastHDOP);
-    Serial.print("\t");
-    Serial.print(lastTime);
-    Serial.print("Z");
-
     // End of line
     Serial.println("");
 }
@@ -1324,6 +1332,8 @@ void printHeader3_ToSerial()
 {
     Serial.print(F("time"));
     Serial.print("\t");
+    Serial.print(F("GPS time (UTC) "));
+    Serial.print("\t");
     Serial.print(F("ns"));
     Serial.print("\t");
     Serial.print(F("dac"));
@@ -1345,8 +1355,6 @@ void printHeader3_ToSerial()
     Serial.print(F("sats"));
     Serial.print("\t");
     Serial.println(F("hdop"));
-    Serial.println("\t");
-    Serial.println(F("utc"));
 }
 
 /**
@@ -1691,17 +1699,11 @@ void processNMEA(char msg[])
     // GPGGA Message (also check for NEO-M8 GNGGA message, same format)
     if ( (strncmp(msg, "$GPGGA,", 7) == 0) || (strncmp(msg, "$GNGGA,", 7) == 0) )
     {
-        //Serial.println(msg);
         // Split out each comma-separated value and track index
         char* next = strtok(msg, ",");
         char idx = 0;
         while (next != NULL)
         {
-            // UTC time is at index 1
-            if (idx == 1)
-            {
-                strcpy(lastTime, next);
-            }
             // Number of sats is at index 7
             if (idx == 7)
             {
@@ -1717,6 +1719,68 @@ void processNMEA(char msg[])
             idx++;
         }
     }
+    // GPRMC Message (to get date & time)
+    else if ( (strncmp(msg, "$GPRMC,", 7) == 0) || (strncmp(msg, "$GNRMC,", 7) == 0) )
+    {
+        // Split out each comma-separated value and track index
+        char* next = strtok(msg, ",");
+        char idx = 0;
+        while (next != NULL)
+        {
+            // Get timestamp in UTC
+            if (idx == 1) 
+            {
+                strcpy(lastTime, next);
+            }
+            // Get datestamp string
+            if (idx == 9)
+            {
+                strcpy(lastDate, next);
+            }
+            // Get next item and increase index
+            next = strtok(NULL, ",");
+            idx++;
+        }
+    }
+}
+
+/**
+ * Gets the last reported date & time from the GPS module as a string
+ * 
+ * \param outStr output string pointer
+ */
+void getDateTimeStr(char *outStr) {
+    char outBuf[17];
+    // Make sure both strings have been populated
+    if (strlen(lastDate) && strlen(lastTime))
+    {
+        // Placeholders for extracted date/time
+        char day[2], month[2], year[2], hour[2], min[2], sec[2];
+        // Get parts of each time string
+        strncpy(day, lastDate, 2);
+        strncpy(month, lastDate + 2, 2);
+        strncpy(year, lastDate + 4, 2);
+        strncpy(hour, lastTime, 2);
+        strncpy(min, lastTime + 2, 2);
+        strncpy(sec, lastTime + 4, 2);
+        // concat the full timestamp string
+        strcpy(outBuf, year);
+        strcat(outBuf, "/");
+        strcat(outBuf, month);
+        strcat(outBuf, "/");
+        strcat(outBuf, day);
+        strcat(outBuf, " ");
+        strcat(outBuf, hour);
+        strcat(outBuf, ":");
+        strcat(outBuf, min);
+        strcat(outBuf, ":");
+        strcat(outBuf, sec);
+    }
+    else
+    {
+        strcpy(outBuf, "No date/time fix");
+    }
+    strcpy(outStr, outBuf);
 }
 
 /***********************************************************************************************
