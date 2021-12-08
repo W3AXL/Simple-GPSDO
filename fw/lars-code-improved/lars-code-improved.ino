@@ -64,9 +64,11 @@ unsigned long ledTime = 0;
 unsigned long faultMsgTime = 0;
 
 float lastHDOP = 0;
-int lastSats = 0;
-char lastTime[9];   // format: hhmmss.ss
-char lastDate[6];   // format: mmddyy
+char lastSats = 0;
+
+// UTC timestamp string (from NMEA)
+char lastTime[9];
+char lastDate[11];
 
 char nmeaBuffer[100] = {};  // Buffer for NMEA serial messages.
 char nmeaLoc = 0;           // Counter for nmea buffer location
@@ -1086,9 +1088,9 @@ void printDataToSerial()
     Serial.print("\t");
 
     // Print GPS time
-    char timeString[17];
-    getDateTimeStr(timeString);
-    Serial.print(timeString);
+    Serial.print(lastDate);
+    Serial.print(" ");
+    Serial.print(lastTime);
     Serial.print("\t");
 
     // Print TIC
@@ -1167,7 +1169,7 @@ void printDataToSerial()
         Serial.print("\t");
 
         // Print GPS data
-        Serial.print(lastSats);
+        Serial.print(int(lastSats));
         Serial.print("\t");
         Serial.print(lastHDOP);
 
@@ -1719,68 +1721,59 @@ void processNMEA(char msg[])
             idx++;
         }
     }
-    // GPRMC Message (to get date & time)
-    else if ( (strncmp(msg, "$GPRMC,", 7) == 0) || (strncmp(msg, "$GNRMC,", 7) == 0) )
+
+    // GPZDA Message (UTC time)
+    else if ( (strncmp(msg, "$GPZDA,", 7) == 0) || (strncmp(msg, "$GNZDA,", 7) == 0) )
     {
         // Split out each comma-separated value and track index
         char* next = strtok(msg, ",");
         char idx = 0;
         while (next != NULL)
         {
-            // Get timestamp in UTC
+            // Get UTC time from index 1 (format HHMMSS.sss)
             if (idx == 1) 
             {
-                strcpy(lastTime, next);
+                // temp variables for parsing the time
+                char temp[3];
+                // Hour (we have to add a null terminator to this one so the following strncpys know where to start)
+                strncpy(temp, next, 2);
+                temp[2] = '\0';
+                strcpy(lastTime, temp);
+                strncat(lastTime, ":", 1);
+                // Minute
+                strncpy(temp, next + 2, 2);
+                strncat(lastTime, temp, 2);
+                strncat(lastTime, ":", 1);
+                // Second
+                strncpy(temp, next + 4, 2);
+                strncat(lastTime, temp, 2);
             }
-            // Get datestamp string
-            if (idx == 9)
+
+            // Get day
+            else if (idx == 2)
             {
-                strcpy(lastDate, next);
+                strncpy(lastDate, next, 3); // copy 3 to include the null terminator, same reason as above
+                strncat(lastDate, "/", 1);
             }
+            // Get month
+            else if (idx == 3)
+            {
+                strncat(lastDate, next, 2);
+                strncat(lastDate, "/", 1);
+            }
+            // Get year
+            else if (idx == 4)
+            {
+                strncat(lastDate, next, 4);
+            }
+
             // Get next item and increase index
             next = strtok(NULL, ",");
             idx++;
         }
     }
-}
 
-/**
- * Gets the last reported date & time from the GPS module as a string
- * 
- * \param outStr output string pointer
- */
-void getDateTimeStr(char *outStr) {
-    char outBuf[17];
-    // Make sure both strings have been populated
-    if (strlen(lastDate) && strlen(lastTime))
-    {
-        // Placeholders for extracted date/time
-        char day[2], month[2], year[2], hour[2], min[2], sec[2];
-        // Get parts of each time string
-        strncpy(day, lastDate, 2);
-        strncpy(month, lastDate + 2, 2);
-        strncpy(year, lastDate + 4, 2);
-        strncpy(hour, lastTime, 2);
-        strncpy(min, lastTime + 2, 2);
-        strncpy(sec, lastTime + 4, 2);
-        // concat the full timestamp string
-        strcpy(outBuf, year);
-        strcat(outBuf, "/");
-        strcat(outBuf, month);
-        strcat(outBuf, "/");
-        strcat(outBuf, day);
-        strcat(outBuf, " ");
-        strcat(outBuf, hour);
-        strcat(outBuf, ":");
-        strcat(outBuf, min);
-        strcat(outBuf, ":");
-        strcat(outBuf, sec);
-    }
-    else
-    {
-        strcpy(outBuf, "No date/time fix");
-    }
-    strcpy(outStr, outBuf);
+    // 
 }
 
 /***********************************************************************************************
