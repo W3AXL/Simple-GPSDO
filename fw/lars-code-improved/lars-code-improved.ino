@@ -31,6 +31,8 @@
 
 #include <EEPROM.h>
 
+#define VERSION     "1.0.1-2021-DEC"
+
 /***********************************************************************************************
  *  Pin Assignments
  **********************************************************************************************/
@@ -515,6 +517,10 @@ void calculation()
  */
 void getCommand()
 {
+    // Return if the serial port isn't open (disconnected or unplugged)
+    if (!Serial) {return;}
+
+    // Storage for command
     char ch;
     long z;
 
@@ -687,7 +693,7 @@ void getCommand()
                 Serial.print("\t");
                 printHeader2_ToSerial();
                 Serial.println("");
-                Serial.println("");
+                /*Serial.println("");
                 Serial.println(F("Typing a<value><enter> will set a new damping between between 0.50 and 10.00 set 50 to 1000"));
                 Serial.println(F("Typing b<value><enter> will set a new tempRef between 1 and 1023"));
                 Serial.println(F("Typing c<value><enter> will set a new tempCoeff set between 0 and 10000. Adding 10000 gives negative tc"));
@@ -707,7 +713,7 @@ void getCommand()
                 Serial.println(F("Typing s<value><enter> will save gain etc to EEPROM if value 1 and dacvalue if 2"));
                 Serial.println(F("Typing t<value><enter> will set a new time constant between 4 and 32000 seconds"));
                 Serial.println(F("Typing w<value><enter> will set a new warmup time between 2 and 1000 seconds"));
-                Serial.println("");
+                Serial.println("");*/
                 printHeader3_ToSerial();
                 break;
 
@@ -1083,6 +1089,9 @@ void getCommand()
  */
 void printDataToSerial()
 {
+    // Return if serial port not connected
+    if (!Serial) {return;}
+
     // Print time since boot
     Serial.print((time), DEC);
     Serial.print("\t");
@@ -1309,6 +1318,9 @@ void printDataToSerial()
  */
 void printHeader1_ToSerial()
 {
+    // Return if serial port not connected
+    if (!Serial) {return;}
+
     Serial.print(F("Arduino GPSDO with 1ns TIC by Lars Walenius"));
     Serial.print(F("modified by W3AXL for use with Simple-GPSDO board"));
 }
@@ -1318,7 +1330,10 @@ void printHeader1_ToSerial()
  */
 void printHeader2_ToSerial()
 {
-    Serial.print(F("Rev. 3.0 170801"));
+    // Return if serial port not connected
+    if (!Serial) {return;}
+
+    Serial.print(F(VERSION));
     if ((ID_Number >= 0) && (ID_Number < 65535))
     {
         Serial.print(F("  ID:"));
@@ -1332,6 +1347,9 @@ void printHeader2_ToSerial()
  */
 void printHeader3_ToSerial()
 {
+    // Return if serial port not connected
+    if (!Serial) {return;}
+
     Serial.print(F("time"));
     Serial.print("\t");
     Serial.print(F("GPS time (UTC) "));
@@ -1648,11 +1666,11 @@ void updateLEDs()
         faultMsgTime = millis();
         if (!gpsFix)
         {
-            Serial.println("FAULT: GPS FIX. Missing PPS?");
+            if (Serial) { Serial.println("FAULT: GPS FIX. Missing PPS?"); }
         }
         else if (!PPSlocked)
         {
-            Serial.println("FAULT: Loop Not Locked");
+            if (Serial) { Serial.println("FAULT: Loop Not Locked"); }
         }
     }
 
@@ -1831,9 +1849,7 @@ void setup()
 
     // Print info and header in beginning
     printHeader2_ToSerial();
-    Serial.println(""); // prints a carriage return
-    Serial.println(F("Type f1 <enter> to get help+info"));
-    printHeader3_ToSerial();
+    printHeader3_ToSerial();  
 
     //clear  PPS flag and go on to main loop
     PPS_ReadFlag = false;
@@ -1872,7 +1888,7 @@ void loop()
             // We lost GPS fix, probably
             if (gpsFix) {gpsFix = false;}
             // Print status
-            Serial.println(F(" No PPS"));
+            if (Serial) { Serial.println(F(" No PPS")); }
             if (overflowCount > 2000)
                 newMode = run; // resets timer_us etc after 20s without PPS in calculation function
             if (overflowCount > 20000)
