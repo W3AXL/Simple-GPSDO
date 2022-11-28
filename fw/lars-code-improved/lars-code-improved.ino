@@ -1353,7 +1353,8 @@ void printHeader3_ToSerial()
     Serial.print(F("time"));
     Serial.print("\t");
     Serial.print(F("GPS time (UTC) "));
-    Serial.print("\t");
+    // Double tab to account for larger time print
+    Serial.print("\t\t");
     Serial.print(F("ns"));
     Serial.print("\t");
     Serial.print(F("dac"));
