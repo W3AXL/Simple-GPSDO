@@ -1,0 +1,25 @@
+Circuit: * H:\Documents\GitHub\Simple-GPSDO\sim\DDM\ddm_circuit.asc
+
+WARNING: Less than two connections to node 5V.  This node is used by V1.
+WARNING: Less than two connections to node 50NS.  This node is used by A2.
+WARNING: Less than two connections to node DDM.  This node is used by A3.
+WARNING: Less than two connections to node N002.  This node is used by A5.
+Direct Newton iteration for .op point succeeded.
+
+Date: Wed Nov 01 15:54:21 2023
+Total elapsed time: 0.034 seconds.
+
+tnom = 27
+temp = 27
+method = modified trap
+totiter = 4379
+traniter = 4376
+tranpoints = 2189
+accept = 1938
+rejected = 251
+matrix size = 9
+fillins = 0
+solver = Normal
+Matrix Compiler1:       8 opcodes  0.0/[0.0]/0.0
+Matrix Compiler2: 355 bytes object code size  0.0/0.1/[0.0]
+

@@ -1,0 +1,12 @@
+* H:\Documents\GitHub\Simple-GPSDO\sim\DDM\ddm_circuit.asc
+V1 5V 0 5 Rser=2
+V2 10MHz 0 PULSE(0 5 0 4n 4n 50n 100n) Rser=100
+V3 PPS 0 PULSE(0 5 2u 4n 4n 500m 1) Rser=100
+A1 N001 0 10MHz 0 0 N001 5MHz 0 DFLOP Vlow=0 Vhigh=5 Td=4n
+A2 0 5MHz 10MHz 0 0 0 50ns 0 AND Vlow=0 Vhigh=5 Td=5n
+A3 0 0 0 0 0 0 DDM 0 OR Vlow=0 Vhigh=5 Td=5n
+A4 0 10MHz 0 5MHz 0 0 150ns 0 OR Vlow=0 Vhigh=5 Td=5n
+A5 PPS 0 PPS 0 150ns 0 N002 0 DFLOP Vlow=0 Vhigh=5 Td=4n
+.tran 0 3u 1u
+.backanno
+.end
