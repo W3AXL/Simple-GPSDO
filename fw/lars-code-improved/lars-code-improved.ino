@@ -31,7 +31,8 @@
 
 #include <EEPROM.h>
 
-#define VERSION     "1.0.1-2021-DEC"
+#define VERSION "1.1.0"
+#define VER_STR "v" VERSION "-" __DATE__ "-" __TIME__
 
 /***********************************************************************************************
  *  Pin Assignments
@@ -74,6 +75,12 @@ char lastDate[11];
 
 char nmeaBuffer[100] = {};  // Buffer for NMEA serial messages.
 char nmeaLoc = 0;           // Counter for nmea buffer location
+
+double lastLat = 0;
+double lastLon = 0;
+
+// U-Blox Data Header for GPS
+#define UBX_HEADER  "\xB5" "\x62"
 
 /***********************************************************************************************
  *  Lars Globals
@@ -518,51 +525,11 @@ void calculation()
 void getCommand()
 {
     // Return if the serial port isn't open (disconnected or unplugged)
-    if (!Serial) {return;}
+    if (!serialOpen()) {return;}
 
     // Storage for command
     char ch;
     long z;
-
-    enum Command
-    { // this is the command set
-        a = 'a',
-        A = 'A', // set damping
-        b = 'b',
-        B = 'B', // set reference temperature
-        c = 'c',
-        C = 'C', // set temperature coefficient
-        d = 'd',
-        D = 'D', // set dacvalue (followed by a value)
-        e = 'e',
-        E = 'E', // erase (followed by a value)
-        f = 'f',
-        F = 'F', // help (followed by a value)
-        g = 'g',
-        G = 'G', // gain (followed by new value)
-        h = 'h',
-        H = 'H', // hold (followed by a DAC value note: 0 will set only hold)
-        i = 'i',
-        I = 'I', // toggles less or more info
-        j = 'j',
-        J = 'J', // set temperature sensor type
-        l = 'l',
-        L = 'L', // set TIC linearization parameters min max square
-        n = 'n',
-        N = 'N', // set ID number
-        o = 'o',
-        O = 'O', // TIC_Offset (followed by new value)
-        p = 'p',
-        P = 'P', // set prefilter div
-        r = 'r',
-        R = 'R', // run
-        s = 's',
-        S = 'S', // save (followed by a value)
-        t = 't',
-        T = 'T', // time const (followed by new value)
-        w = 'w',
-        W = 'W', // set warmup time (to allow for warm up of oscillator)
-    };
 
     if (Serial.available() > 0)
     { //process if something is there
@@ -571,8 +538,8 @@ void getCommand()
         switch (ch)
         {
 
-        case a: // set damping command
-        case A:
+        case 'a': // set damping command
+        case 'A':
             z = Serial.parseInt(); //needs new line or carriage return set in Arduino serial monitor
             if (z >= 50 && z <= 1000)
             {
@@ -586,8 +553,8 @@ void getCommand()
             }
             break;
 
-        case b: // set temperature offset command
-        case B:
+        case 'b': // set temperature offset command
+        case 'B':
             z = Serial.parseInt();
             if (z >= 1 && z <= 1023)
             {
@@ -601,8 +568,8 @@ void getCommand()
             }
             break;
 
-        case c: // Set temperature coefficient
-        case C:
+        case 'c': // Set temperature coefficient
+        case 'C':
             z = Serial.parseInt();
             if (z >= 0 && z <= 10000)
             {
@@ -624,8 +591,8 @@ void getCommand()
             }
             break;
 
-        case d: // set dacValue command
-        case D:
+        case 'd': // set dacValue command
+        case 'D':
             z = Serial.parseInt();
             if (z >= 1 && z <= 65535)
             {
@@ -639,8 +606,8 @@ void getCommand()
             }
             break;
 
-        case e: // erase command
-        case E:
+        case 'e': // erase command
+        case 'E':
             z = Serial.parseInt();
             switch (z)
             {
@@ -679,8 +646,8 @@ void getCommand()
 
             break;
 
-        case f: // help command
-        case F:
+        case 'f': // help command
+        case 'F':
             z = Serial.parseInt();
 
             switch (z)
@@ -854,8 +821,8 @@ void getCommand()
             }
             break;
 
-        case g: // gain command
-        case G:
+        case 'g': // gain command
+        case 'G':
             z = Serial.parseInt();
             if (z >= 10 && z <= 65534)
             {
@@ -869,8 +836,8 @@ void getCommand()
             }
             break;
 
-        case h: // hold command
-        case H:
+        case 'h': // hold command
+        case 'H':
             z = Serial.parseInt();
             if (z >= 0 && z <= 65535)
             {
@@ -887,8 +854,8 @@ void getCommand()
 
             break;
 
-        case i: // help command
-        case I:
+        case 'i': // help command
+        case 'I':
             z = Serial.parseInt();
             if (z == 1)
             {
@@ -900,8 +867,8 @@ void getCommand()
             }
             break;
 
-        case j: // temperature_Sensor_Type
-        case J:
+        case 'j': // temperature_Sensor_Type
+        case 'J':
             z = Serial.parseInt();
             if (z >= 0 && z <= 99)
             {
@@ -915,8 +882,8 @@ void getCommand()
             }
             break;
 
-        case l: // set TIC linearization parameters command
-        case L:
+        case 'l': // set TIC linearization parameters command
+        case 'L':
             z = Serial.parseInt();
             if (z >= 1 && z <= 500)
             {
@@ -942,8 +909,8 @@ void getCommand()
             }
             break;
 
-        case n: // ID_number
-        case N:
+        case 'n': // ID_number
+        case 'N':
             z = Serial.parseInt();
             if (z >= 0 && z <= 65534)
             {
@@ -957,8 +924,8 @@ void getCommand()
             }
             break;
 
-        case o: // TIC_Offset command
-        case O:
+        case 'o': // TIC_Offset command
+        case 'O':
             z = Serial.parseInt();
             if (z >= 200 && z <= 1020)
             {
@@ -972,8 +939,8 @@ void getCommand()
             }
             break;
 
-        case p: // set prefilter div command
-        case P:
+        case 'p': // set prefilter div command
+        case 'P':
             z = Serial.parseInt();
             if (z >= 2 && z <= 4)
             {
@@ -987,15 +954,31 @@ void getCommand()
             }
             break;
 
-        case r: // run command
-        case R:
+        case 'q': // GPS receiver query
+        case 'Q':
+            z = Serial.parseInt();
+            switch (z)
+            {
+                case 1: // Check status (position, survey-in status, and mode)
+                    break;
+                case 2: // Start survey-in
+                    break;
+                case 3: // Cancel survey-in
+                    break;
+                default:
+                    Serial.println(F("Not a valid value for GPS receiver"));
+            }
+            break;
+        
+        case 'r': // run command
+        case 'R':
             Serial.println(F("Run"));
             opMode = run;
             newMode = run;
             break;
 
-        case s: // save command
-        case S:
+        case 's': // save command
+        case 'S':
             z = Serial.parseInt();
             switch (z)
             {
@@ -1042,8 +1025,8 @@ void getCommand()
             }
             break;
 
-        case t: // time constant command
-        case T:
+        case 't': // time constant command
+        case 'T':
             z = Serial.parseInt();
             if (z >= 4 && z <= 32000)
             {
@@ -1057,8 +1040,8 @@ void getCommand()
             }
             break;
 
-        case w: // set warm up time command
-        case W:
+        case 'w': // set warm up time command
+        case 'W':
             z = Serial.parseInt();
             if (z >= 2 && z <= 1000)
             {
@@ -1090,7 +1073,7 @@ void getCommand()
 void printDataToSerial()
 {
     // Return if serial port not connected
-    if (!Serial) {return;}
+    if (!serialOpen()) {return;}
 
     // Print time since boot
     Serial.print((time), DEC);
@@ -1181,6 +1164,7 @@ void printDataToSerial()
         Serial.print(int(lastSats));
         Serial.print("\t");
         Serial.print(lastHDOP);
+        Serial.print("\t");
 
         // Optional extra serial data
         if (i == 1)
@@ -1319,7 +1303,7 @@ void printDataToSerial()
 void printHeader1_ToSerial()
 {
     // Return if serial port not connected
-    if (!Serial) {return;}
+    if (!serialOpen()) {return;}
 
     Serial.print(F("Arduino GPSDO with 1ns TIC by Lars Walenius"));
     Serial.print(F("modified by W3AXL for use with Simple-GPSDO board"));
@@ -1331,9 +1315,9 @@ void printHeader1_ToSerial()
 void printHeader2_ToSerial()
 {
     // Return if serial port not connected
-    if (!Serial) {return;}
+    if (!serialOpen()) {return;}
 
-    Serial.print(F(VERSION));
+    Serial.print(F(VER_STR));
     if ((ID_Number >= 0) && (ID_Number < 65535))
     {
         Serial.print(F("  ID:"));
@@ -1348,7 +1332,7 @@ void printHeader2_ToSerial()
 void printHeader3_ToSerial()
 {
     // Return if serial port not connected
-    if (!Serial) {return;}
+    if (!serialOpen()) {return;}
 
     Serial.print(F("time"));
     Serial.print("\t");
@@ -1444,6 +1428,28 @@ void flashLEDtwice()
 /***********************************************************************************************
  *  W3AXL Extra Functions
  **********************************************************************************************/
+
+void setupVbusDetect()
+{
+    USBCON |= 1<<OTGPADE;
+}
+
+bool serialOpen()
+{
+    // Return false if DTR is not asserted
+    if (!Serial.dtr())
+    {
+        return false;
+    }
+    // Return false if USB VBUS is disconnected
+    if (!(USBSTA & (1<<VBUS)))
+    {
+        return false;
+    }
+    // Otherwise, return true
+    return true;
+}
+
 
 /**
  * Sets up pins
@@ -1792,7 +1798,11 @@ void processNMEA(char msg[])
         }
     }
 
-    // 
+    // UBX-specific messages
+    else if (strncmp(msg, UBX_HEADER, 2))
+    {
+
+    }
 }
 
 /***********************************************************************************************
@@ -1803,6 +1813,9 @@ void setup()
 {
     // Init pins
     setupPins();
+
+    // Init VBUS detect
+    setupVbusDetect();
 
     // Test LEDs
     ledTest(2, 200);
@@ -1889,7 +1902,7 @@ void loop()
             // We lost GPS fix, probably
             if (gpsFix) {gpsFix = false;}
             // Print status
-            if (Serial) { Serial.println(F(" No PPS")); }
+            if (serialOpen()) { Serial.println(F(" No PPS")); }
             if (overflowCount > 2000)
                 newMode = run; // resets timer_us etc after 20s without PPS in calculation function
             if (overflowCount > 20000)
